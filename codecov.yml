@@ -1,0 +1,15 @@
+# Codecov: the unit tests' coverage (flag `unit`, `pnpm test:coverage`), sent by CI. Like the
+# threshold in vite.config.ts, it asks for 95 %: a commit or pull request below it fails its check.
+coverage:
+  status:
+    project:
+      default:
+        target: 95%
+        threshold: 0.5%
+    patch:
+      default:
+        target: 95%
+
+comment:
+  layout: 'condensed_header, condensed_files, condensed_footer'
+  require_changes: true

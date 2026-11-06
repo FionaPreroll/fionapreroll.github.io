@@ -1,0 +1,45 @@
+name: Screenshots
+
+# Run by hand from the Actions tab: takes the README's screenshots and the link preview
+# (static/og.png) again and opens a pull request with them, for review. Nothing changes on main
+# until that pull request is merged.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: screenshots
+  cancel-in-progress: true
+
+jobs:
+  screenshots:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm screenshots
+      - uses: peter-evans/create-pull-request@v7
+        with:
+          branch: chore/update_screenshots
+          delete-branch: true
+          add-paths: |
+            docs/screenshots/*.png
+            static/og.png
+          commit-message: Update the README screenshots and the link preview
+          title: Update the README screenshots and the link preview
+          body: |
+            The screenshots in `docs/screenshots/` and `static/og.png`, taken again from `main` by the Screenshots workflow ([run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})).
+
+            Look at them under **Files changed** and merge if they look right.
+          assignees: ${{ github.actor }}
+          reviewers: ${{ github.actor }}

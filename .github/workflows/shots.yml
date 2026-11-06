@@ -1,0 +1,46 @@
+name: Project screenshots
+
+# Every Monday and by hand: fetches the projects' screenshots from their repositories again
+# (`pnpm shots`) and opens a pull request when any of them changed, for review.
+on:
+  schedule:
+    - cron: '17 5 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: shots
+  cancel-in-progress: true
+
+jobs:
+  shots:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm shots
+      # The pictures must still fit the page: every one a project names is there.
+      - run: pnpm test
+      - uses: peter-evans/create-pull-request@v7
+        with:
+          branch: chore/update_project_screenshots
+          delete-branch: true
+          add-paths: |
+            static/shots/**
+            static/avatar-*.webp
+            src/content/shots.json
+          commit-message: Update the project screenshots
+          title: Update the project screenshots
+          body: |
+            The screenshots of the projects, fetched again from their repositories by the Project screenshots workflow ([run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})).
+
+            Look at them under **Files changed** and merge if they look right.
