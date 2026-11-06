@@ -1,0 +1,7 @@
+# Package managers
+pnpm-lock.yaml
+package-lock.json
+
+# Generated: pnpm shots writes the screenshots and their list
+/static/shots/
+src/content/shots.json

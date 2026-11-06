@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="robots" content="noindex" />
+		<title>Lost in orbit · Fiona</title>
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<style>
+			:root {
+				color-scheme: light dark;
+				--paper: #fbfaf7;
+				--ink: #1c1a24;
+				--muted: #5c5868;
+				--accent: #6d28d9;
+				--grid: rgb(124 58 237 / 0.08);
+			}
+			@media (prefers-color-scheme: dark) {
+				:root {
+					--paper: #0f0d16;
+					--ink: #ece9f3;
+					--muted: #a7a1b6;
+					--accent: #b9a2fb;
+					--grid: rgb(167 139 250 / 0.08);
+				}
+			}
+			* {
+				box-sizing: border-box;
+			}
+			body {
+				margin: 0;
+				min-height: 100dvh;
+				display: grid;
+				place-items: center;
+				padding: 24px;
+				background: var(--paper);
+				color: var(--ink);
+				font-family: ui-sans-serif, system-ui, sans-serif;
+				background-image:
+					linear-gradient(to right, var(--grid) 1px, transparent 1px),
+					linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+				background-size: 24px 24px;
+			}
+			main {
+				max-width: 34rem;
+				text-align: center;
+			}
+			.orbit {
+				position: relative;
+				width: 120px;
+				height: 120px;
+				margin: 0 auto 32px;
+				border: 1.5px dashed color-mix(in srgb, var(--accent) 45%, transparent);
+				border-radius: 50%;
+				animation: spin 9s linear infinite;
+			}
+			.orbit svg {
+				position: absolute;
+				top: -8px;
+				left: 50%;
+				width: 32px;
+				height: 16px;
+				transform: translateX(-50%);
+			}
+			@keyframes spin {
+				to {
+					transform: rotate(360deg);
+				}
+			}
+			@media (prefers-reduced-motion: reduce) {
+				.orbit {
+					animation: none;
+				}
+			}
+			.code {
+				font-family: ui-monospace, monospace;
+				font-size: 0.75rem;
+				letter-spacing: 0.14em;
+				text-transform: uppercase;
+				color: var(--accent);
+			}
+			h1 {
+				margin: 0.5rem 0 0;
+				font-family: ui-serif, Georgia, serif;
+				font-size: clamp(2rem, 6vw, 3rem);
+			}
+			p {
+				color: var(--muted);
+				line-height: 1.6;
+			}
+			a {
+				display: inline-block;
+				margin-top: 1rem;
+				padding: 0.6rem 1.2rem;
+				border-radius: 999px;
+				background: var(--accent);
+				color: var(--paper);
+				text-decoration: none;
+				font-weight: 500;
+			}
+			hr {
+				width: 3rem;
+				margin: 2rem auto;
+				border: 0;
+				border-top: 1px solid color-mix(in srgb, var(--muted) 40%, transparent);
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<div class="orbit" aria-hidden="true">
+				<svg viewBox="0 0 32 16">
+					<rect x="0.5" y="4" width="10" height="8" rx="1" fill="#38bdf8" />
+					<rect x="21.5" y="4" width="10" height="8" rx="1" fill="#38bdf8" />
+					<path d="M10.5 8h11" stroke="currentColor" stroke-width="1.2" />
+					<circle cx="16" cy="8" r="4.2" fill="#f472b6" />
+				</svg>
+			</div>
+			<p class="code">Error 404 · signal lost</p>
+			<h1>Lost in orbit</h1>
+			<p>This page drifted out of range. Everything that is here is on the home page.</p>
+			<a href="/">Back to the home page</a>
+			<hr />
+			<div lang="de">
+				<h1>Verloren im Orbit</h1>
+				<p>
+					Diese Seite ist außer Reichweite geraten. Alles, was es hier gibt, steht auf der
+					Startseite.
+				</p>
+				<a href="/de/">Zur Startseite</a>
+			</div>
+		</main>
+	</body>
+</html>

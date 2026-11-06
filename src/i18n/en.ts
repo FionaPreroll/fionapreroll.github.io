@@ -1,0 +1,117 @@
+// Every text of the page around the projects, in English. de.ts has the same keys: a key missing
+// there fails the type check. `{name}` is filled in by t() (see index.ts).
+export const en = {
+	'meta.title': 'Fiona · Engineering experiments, shipped with care',
+	'meta.description':
+		'Fiona’s portfolio: 3D browser games, phones that play together without a server, music and video tools that run in the browser, and network tools in Rust.',
+
+	skip: 'Skip to the projects',
+	'nav.label': 'Sections',
+	'nav.projects': 'Projects',
+	'nav.practices': 'How I build',
+	'nav.tech': 'Tech',
+	'nav.contact': 'Contact',
+	'nav.home': 'Fiona, to the top',
+	'lang.label': 'Language',
+	'lang.switch': 'Auf Deutsch lesen',
+	'theme.label': 'Color theme: {mode}. Change it',
+	'theme.system': 'like the system',
+	'theme.light': 'light',
+	'theme.dark': 'dark',
+
+	'hero.hello': 'Hi, I’m Fiona.',
+	'hero.title': 'Engineering experiments, shipped with care.',
+	'hero.intro':
+		'I build software end to end: 3D games in the browser, phones that play together without a server, music and video tools that never upload a file, and network tools in Rust. Every project here comes with tests, CI, documentation and an interface in English and German.',
+	'hero.open': 'Open to new opportunities',
+	'hero.cta.projects': 'See the projects',
+	'hero.cta.contact': 'Get in touch',
+	'hero.avatar': 'Fiona’s avatar, with a little satellite in orbit',
+	'hero.facts': 'At a glance',
+	'hero.fact.projects': 'Projects',
+	'hero.fact.code': 'Mostly written in',
+	'hero.fact.code.value': 'TypeScript · Svelte · Rust',
+	'hero.fact.platforms': 'Runs on',
+	'hero.fact.platforms.value': 'Web · Android · Linux',
+	'hero.fact.i18n': 'Interfaces in',
+	'hero.fact.i18n.value': 'English · Deutsch',
+
+	'projects.title': 'Projects',
+	'projects.intro':
+		'Ten recent projects from my GitHub, by topic. Each one runs, is open source and documented: open the details for more screenshots, how it is built, and links to its docs, releases and packages.',
+	'projects.gadget': 'Gadget No. {n}',
+	'projects.since': 'since {date}',
+	'projects.why': 'Why',
+	'projects.what': 'What',
+	'projects.stack': 'Stack',
+	'projects.platforms': 'Runs on',
+	'projects.details.show': 'Show details',
+	'projects.details.hide': 'Hide details',
+	'projects.features': 'What it does',
+	'projects.engineering': 'Under the hood',
+	'projects.gallery': 'More screenshots',
+	'projects.links': 'Links',
+	'projects.permalink': 'Link to {name}',
+	'projects.source': 'Source',
+	'projects.filtered': '{n} of {total} projects use {tech}.',
+	'projects.filter.clear': 'Show all projects',
+	'projects.filter.by': 'Show the projects with {tech}',
+
+	'group.games.title': 'Games',
+	'group.games.intro': 'Puzzles and a 3D game, all made for the browser.',
+	'group.networking.title': 'Networking & peer to peer',
+	'group.networking.intro':
+		'Devices that talk to each other directly, and a tunnel for servers behind a router.',
+	'group.audio.title': 'Music & audio',
+	'group.audio.intro': 'Making, playing, showing and remembering music.',
+	'group.everyday.title': 'Everyday',
+	'group.everyday.intro': 'Small tools that simply work.',
+
+	'link.live': 'Open it',
+	'link.apk': 'Android app (APK)',
+	'link.releases': 'Releases',
+	'link.packages': 'Package',
+	'link.docker': 'Docker image',
+	'link.readme': 'README',
+	'link.docs': 'Documentation',
+	'link.changelog': 'Changelog',
+	'link.privacy': 'Privacy policy',
+	'link.external': '(opens on another site)',
+
+	'platform.web': 'Browser',
+	'platform.pwa': 'Offline & installable',
+	'platform.android': 'Android',
+	'platform.linux': 'Linux',
+	'platform.docker': 'Docker',
+	'platform.server': 'Self-hosted',
+
+	'practices.title': 'How I build',
+	'practices.intro':
+		'The same habits run through all of these projects. Each tile names where they show best.',
+	'practices.seenIn': 'Seen in',
+
+	'tech.title': 'Technologies',
+	'tech.intro':
+		'Everything these projects are built with, by how many of them use it. Pick one to see its projects.',
+	'tech.count': 'in {n} of the projects',
+
+	'contact.title': 'Get in touch',
+	'contact.body':
+		'A role, a project, or a question about one of these: I’m happy to hear from you.',
+	'contact.email': 'Write an email',
+	'contact.github': 'GitHub profile',
+	'contact.print': 'Print or save as PDF',
+
+	'footer.built': 'Built with SvelteKit, Tailwind CSS and Heroicons, in English and German.',
+	'footer.source': 'Source of this page',
+	'footer.top': 'Back to the top',
+
+	'lightbox.label': 'Screenshots of {name}',
+	'lightbox.close': 'Close',
+	'lightbox.prev': 'Previous screenshot',
+	'lightbox.next': 'Next screenshot',
+	'lightbox.count': '{i} of {n}',
+	'gallery.open': 'Enlarge: {caption}'
+} satisfies Record<string, string>;
+
+export type MessageKey = keyof typeof en;

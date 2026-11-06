@@ -1,0 +1,19 @@
+{
+	"extends": "$app/tsconfig",
+	"compilerOptions": {
+		"strict": true,
+		"noUncheckedIndexedAccess": true,
+		"noImplicitOverride": true,
+		"noFallthroughCasesInSwitch": true,
+		"allowImportingTsExtensions": true,
+		"types": ["$app/types", "node", "@testing-library/jest-dom/vitest"]
+	},
+	"include": [
+		"src",
+		"tools",
+		"tests",
+		"vite.config.ts",
+		"playwright.config.ts",
+		"playwright.screenshots.config.ts"
+	]
+}

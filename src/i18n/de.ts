@@ -1,0 +1,116 @@
+import type { MessageKey } from './en.ts';
+
+// Every text of en.ts in German: the type makes a missing or extra key fail the type check.
+export const de: Record<MessageKey, string> = {
+	'meta.title': 'Fiona · Engineering-Experimente, mit Sorgfalt ausgeliefert',
+	'meta.description':
+		'Fionas Portfolio: 3D-Browserspiele, Handys, die ohne Server zusammen spielen, Musik- und Videotools, die im Browser laufen, und Netzwerk-Tools in Rust.',
+
+	skip: 'Zu den Projekten springen',
+	'nav.label': 'Abschnitte',
+	'nav.projects': 'Projekte',
+	'nav.practices': 'Wie ich baue',
+	'nav.tech': 'Technik',
+	'nav.contact': 'Kontakt',
+	'nav.home': 'Fiona, nach oben',
+	'lang.label': 'Sprache',
+	'lang.switch': 'Read in English',
+	'theme.label': 'Farbschema: {mode}. Ändern',
+	'theme.system': 'wie das System',
+	'theme.light': 'hell',
+	'theme.dark': 'dunkel',
+
+	'hero.hello': 'Hallo, ich bin Fiona.',
+	'hero.title': 'Engineering-Experimente, mit Sorgfalt ausgeliefert.',
+	'hero.intro':
+		'Ich baue Software von Anfang bis Ende: 3D-Spiele im Browser, Handys, die ohne Server zusammen spielen, Musik- und Videotools, die nie eine Datei hochladen, und Netzwerk-Tools in Rust. Jedes Projekt hier hat Tests, CI, Dokumentation und eine Oberfläche auf Deutsch und Englisch.',
+	'hero.open': 'Offen für neue Möglichkeiten',
+	'hero.cta.projects': 'Zu den Projekten',
+	'hero.cta.contact': 'Kontakt aufnehmen',
+	'hero.avatar': 'Fionas Avatar, mit einem kleinen Satelliten im Orbit',
+	'hero.facts': 'Auf einen Blick',
+	'hero.fact.projects': 'Projekte',
+	'hero.fact.code': 'Meist geschrieben in',
+	'hero.fact.code.value': 'TypeScript · Svelte · Rust',
+	'hero.fact.platforms': 'Läuft auf',
+	'hero.fact.platforms.value': 'Web · Android · Linux',
+	'hero.fact.i18n': 'Oberflächen auf',
+	'hero.fact.i18n.value': 'Deutsch · English',
+
+	'projects.title': 'Projekte',
+	'projects.intro':
+		'Zehn aktuelle Projekte aus meinem GitHub, nach Thema. Jedes läuft, ist Open Source und dokumentiert: In den Details gibt es mehr Screenshots, wie es gebaut ist, und Links zu Doku, Releases und Paketen.',
+	'projects.gadget': 'Gadget Nr. {n}',
+	'projects.since': 'seit {date}',
+	'projects.why': 'Warum',
+	'projects.what': 'Was',
+	'projects.stack': 'Stack',
+	'projects.platforms': 'Läuft auf',
+	'projects.details.show': 'Details zeigen',
+	'projects.details.hide': 'Details ausblenden',
+	'projects.features': 'Was es kann',
+	'projects.engineering': 'Unter der Haube',
+	'projects.gallery': 'Weitere Screenshots',
+	'projects.links': 'Links',
+	'projects.permalink': 'Link zu {name}',
+	'projects.source': 'Quellcode',
+	'projects.filtered': '{n} von {total} Projekten nutzen {tech}.',
+	'projects.filter.clear': 'Alle Projekte zeigen',
+	'projects.filter.by': 'Die Projekte mit {tech} zeigen',
+
+	'group.games.title': 'Spiele',
+	'group.games.intro': 'Rätsel und ein 3D-Spiel, alle für den Browser gemacht.',
+	'group.networking.title': 'Netzwerk & Peer-to-Peer',
+	'group.networking.intro':
+		'Geräte, die direkt miteinander sprechen, und ein Tunnel für Server hinter einem Router.',
+	'group.audio.title': 'Musik & Audio',
+	'group.audio.intro': 'Musik machen, spielen, zeigen und in Erinnerung behalten.',
+	'group.everyday.title': 'Alltag',
+	'group.everyday.intro': 'Kleine Werkzeuge, die einfach funktionieren.',
+
+	'link.live': 'Öffnen',
+	'link.apk': 'Android-App (APK)',
+	'link.releases': 'Releases',
+	'link.packages': 'Paket',
+	'link.docker': 'Docker-Image',
+	'link.readme': 'README',
+	'link.docs': 'Dokumentation',
+	'link.changelog': 'Changelog',
+	'link.privacy': 'Datenschutz',
+	'link.external': '(öffnet auf einer anderen Seite)',
+
+	'platform.web': 'Browser',
+	'platform.pwa': 'Offline & installierbar',
+	'platform.android': 'Android',
+	'platform.linux': 'Linux',
+	'platform.docker': 'Docker',
+	'platform.server': 'Selbst gehostet',
+
+	'practices.title': 'Wie ich baue',
+	'practices.intro':
+		'Dieselben Gewohnheiten ziehen sich durch alle diese Projekte. Jede Kachel nennt, wo sie am besten zu sehen sind.',
+	'practices.seenIn': 'Zu sehen in',
+
+	'tech.title': 'Technologien',
+	'tech.intro':
+		'Alles, womit diese Projekte gebaut sind, danach, wie viele es nutzen. Eine Auswahl zeigt die passenden Projekte.',
+	'tech.count': 'in {n} der Projekte',
+
+	'contact.title': 'Kontakt',
+	'contact.body':
+		'Eine Stelle, ein Projekt oder eine Frage zu einem davon: Ich freue mich über jede Nachricht.',
+	'contact.email': 'E-Mail schreiben',
+	'contact.github': 'GitHub-Profil',
+	'contact.print': 'Drucken oder als PDF speichern',
+
+	'footer.built': 'Gebaut mit SvelteKit, Tailwind CSS und Heroicons, auf Deutsch und Englisch.',
+	'footer.source': 'Quellcode dieser Seite',
+	'footer.top': 'Nach oben',
+
+	'lightbox.label': 'Screenshots von {name}',
+	'lightbox.close': 'Schließen',
+	'lightbox.prev': 'Vorheriger Screenshot',
+	'lightbox.next': 'Nächster Screenshot',
+	'lightbox.count': '{i} von {n}',
+	'gallery.open': 'Vergrößern: {caption}'
+};

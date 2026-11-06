@@ -1,0 +1,741 @@
+{
+	"vibe-laser/docs/screenshots/color-blind.png": {
+		"path": "/shots/vibe-laser/color-blind",
+		"width": 1440,
+		"height": 900,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"vibe-laser/docs/screenshots/editor.png": {
+		"path": "/shots/vibe-laser/editor",
+		"width": 1440,
+		"height": 900,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"vibe-laser/docs/screenshots/hint.png": {
+		"path": "/shots/vibe-laser/hint",
+		"width": 1440,
+		"height": 900,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"vibe-laser/docs/screenshots/neon.png": {
+		"path": "/shots/vibe-laser/neon",
+		"width": 1440,
+		"height": 900,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"vibe-laser/docs/screenshots/packs.png": {
+		"path": "/shots/vibe-laser/packs",
+		"width": 1440,
+		"height": 900,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"vibe-laser/docs/screenshots/phone.png": {
+		"path": "/shots/vibe-laser/phone",
+		"width": 1830,
+		"height": 824,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"vibe-laser/docs/screenshots/preview.png": {
+		"path": "/shots/vibe-laser/preview",
+		"width": 1440,
+		"height": 900,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"vibe-laser/docs/screenshots/skills.png": {
+		"path": "/shots/vibe-laser/skills",
+		"width": 1440,
+		"height": 900,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"vibe-laser/docs/screenshots/solved.png": {
+		"path": "/shots/vibe-laser/solved",
+		"width": 1440,
+		"height": 900,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"vibe-mugames/docs/screenshots/airhockey.png": {
+		"path": "/shots/vibe-mugames/airhockey",
+		"width": 912,
+		"height": 1918,
+		"widths": [
+			640,
+			912
+		]
+	},
+	"vibe-mugames/docs/screenshots/chooser.png": {
+		"path": "/shots/vibe-mugames/chooser",
+		"width": 1280,
+		"height": 800,
+		"widths": [
+			640,
+			1280
+		]
+	},
+	"vibe-mugames/docs/screenshots/home.png": {
+		"path": "/shots/vibe-mugames/home",
+		"width": 824,
+		"height": 1830,
+		"widths": [
+			640,
+			824
+		]
+	},
+	"vibe-mugames/docs/screenshots/lichtrenner.png": {
+		"path": "/shots/vibe-mugames/lichtrenner",
+		"width": 912,
+		"height": 1918,
+		"widths": [
+			640,
+			912
+		]
+	},
+	"vibe-mugames/docs/screenshots/ludo.png": {
+		"path": "/shots/vibe-mugames/ludo",
+		"width": 824,
+		"height": 1830,
+		"widths": [
+			640,
+			824
+		]
+	},
+	"vibe-mugames/docs/screenshots/maexchen.png": {
+		"path": "/shots/vibe-mugames/maexchen",
+		"width": 824,
+		"height": 1830,
+		"widths": [
+			640,
+			824
+		]
+	},
+	"vibe-mugames/docs/screenshots/miaumiau-split.png": {
+		"path": "/shots/vibe-mugames/miaumiau-split",
+		"width": 1280,
+		"height": 800,
+		"widths": [
+			640,
+			1280
+		]
+	},
+	"vibe-mugames/docs/screenshots/muehle.png": {
+		"path": "/shots/vibe-mugames/muehle",
+		"width": 824,
+		"height": 1830,
+		"widths": [
+			640,
+			824
+		]
+	},
+	"vibe-mugames/docs/screenshots/pairing.png": {
+		"path": "/shots/vibe-mugames/pairing",
+		"width": 824,
+		"height": 818,
+		"widths": [
+			640,
+			824
+		]
+	},
+	"vibe-mugames/docs/screenshots/stadtlandfluss.png": {
+		"path": "/shots/vibe-mugames/stadtlandfluss",
+		"width": 824,
+		"height": 1830,
+		"widths": [
+			640,
+			824
+		]
+	},
+	"vibe-mugames/docs/screenshots/themes.png": {
+		"path": "/shots/vibe-mugames/themes",
+		"width": 824,
+		"height": 1830,
+		"widths": [
+			640,
+			824
+		]
+	},
+	"vibe-mugames/docs/screenshots/werwolf.png": {
+		"path": "/shots/vibe-mugames/werwolf",
+		"width": 824,
+		"height": 1830,
+		"widths": [
+			640,
+			824
+		]
+	},
+	"vibe-musicbanana/docs/screenshots/album.png": {
+		"path": "/shots/vibe-musicbanana/album",
+		"width": 1280,
+		"height": 820,
+		"widths": [
+			640,
+			1280
+		]
+	},
+	"vibe-musicbanana/docs/screenshots/artists-over-the-years.png": {
+		"path": "/shots/vibe-musicbanana/artists-over-the-years",
+		"width": 1136,
+		"height": 456,
+		"widths": [
+			640,
+			1136
+		]
+	},
+	"vibe-musicbanana/docs/screenshots/charts.png": {
+		"path": "/shots/vibe-musicbanana/charts",
+		"width": 1280,
+		"height": 718,
+		"widths": [
+			640,
+			1280
+		]
+	},
+	"vibe-musicbanana/docs/screenshots/compare.png": {
+		"path": "/shots/vibe-musicbanana/compare",
+		"width": 1280,
+		"height": 1500,
+		"widths": [
+			640,
+			1280
+		]
+	},
+	"vibe-musicbanana/docs/screenshots/dark.png": {
+		"path": "/shots/vibe-musicbanana/dark",
+		"width": 1280,
+		"height": 1400,
+		"widths": [
+			640,
+			1280
+		]
+	},
+	"vibe-musicbanana/docs/screenshots/listening-clock.png": {
+		"path": "/shots/vibe-musicbanana/listening-clock",
+		"width": 816,
+		"height": 463,
+		"widths": [
+			640,
+			816
+		]
+	},
+	"vibe-musicbanana/docs/screenshots/lost-and-found.png": {
+		"path": "/shots/vibe-musicbanana/lost-and-found",
+		"width": 1136,
+		"height": 454,
+		"widths": [
+			640,
+			1136
+		]
+	},
+	"vibe-musicbanana/docs/screenshots/merges.png": {
+		"path": "/shots/vibe-musicbanana/merges",
+		"width": 1280,
+		"height": 720,
+		"widths": [
+			640,
+			1280
+		]
+	},
+	"vibe-musicbanana/docs/screenshots/phone.png": {
+		"path": "/shots/vibe-musicbanana/phone",
+		"width": 780,
+		"height": 1688,
+		"widths": [
+			640,
+			780
+		]
+	},
+	"vibe-musicbanana/docs/screenshots/profile.png": {
+		"path": "/shots/vibe-musicbanana/profile",
+		"width": 1280,
+		"height": 1557,
+		"widths": [
+			640,
+			1280
+		]
+	},
+	"vibe-musicbanana/docs/screenshots/year-in-review.png": {
+		"path": "/shots/vibe-musicbanana/year-in-review",
+		"width": 1280,
+		"height": 1481,
+		"widths": [
+			640,
+			1280
+		]
+	},
+	"vibe-p2pgame/docs/screenshots/connection.png": {
+		"path": "/shots/vibe-p2pgame/connection",
+		"width": 780,
+		"height": 1600,
+		"widths": [
+			640,
+			780
+		]
+	},
+	"vibe-p2pgame/docs/screenshots/home-de.png": {
+		"path": "/shots/vibe-p2pgame/home-de",
+		"width": 780,
+		"height": 1600,
+		"widths": [
+			640,
+			780
+		]
+	},
+	"vibe-p2pgame/docs/screenshots/home.png": {
+		"path": "/shots/vibe-p2pgame/home",
+		"width": 780,
+		"height": 1600,
+		"widths": [
+			640,
+			780
+		]
+	},
+	"vibe-p2pgame/docs/screenshots/lobby.png": {
+		"path": "/shots/vibe-p2pgame/lobby",
+		"width": 780,
+		"height": 1600,
+		"widths": [
+			640,
+			780
+		]
+	},
+	"vibe-p2pgame/docs/screenshots/pairing.png": {
+		"path": "/shots/vibe-p2pgame/pairing",
+		"width": 780,
+		"height": 990,
+		"widths": [
+			640,
+			780
+		]
+	},
+	"vibe-p2pgame/docs/screenshots/results.png": {
+		"path": "/shots/vibe-p2pgame/results",
+		"width": 780,
+		"height": 1600,
+		"widths": [
+			640,
+			780
+		]
+	},
+	"vibe-p2pgame/docs/screenshots/round.png": {
+		"path": "/shots/vibe-p2pgame/round",
+		"width": 780,
+		"height": 1600,
+		"widths": [
+			640,
+			780
+		]
+	},
+	"vibe-p2pgame/docs/screenshots/settings.png": {
+		"path": "/shots/vibe-p2pgame/settings",
+		"width": 780,
+		"height": 1600,
+		"widths": [
+			640,
+			780
+		]
+	},
+	"vibe-portredirect/docs/benchmark_baseline_test.svg": {
+		"path": "/shots/vibe-portredirect/benchmark_baseline_test",
+		"width": 517,
+		"height": 59,
+		"widths": [],
+		"svg": true
+	},
+	"vibe-portredirect/docs/benchmark_tunneled_test.svg": {
+		"path": "/shots/vibe-portredirect/benchmark_tunneled_test",
+		"width": 528,
+		"height": 205,
+		"widths": [],
+		"svg": true
+	},
+	"vibe-portredirect/docs/cargo-mods-lib.svg": {
+		"path": "/shots/vibe-portredirect/cargo-mods-lib",
+		"width": 1815,
+		"height": 1519,
+		"widths": [],
+		"svg": true
+	},
+	"vibe-portredirect/docs/portredirect_logo.png": {
+		"path": "/shots/vibe-portredirect/portredirect_logo",
+		"width": 1920,
+		"height": 1080,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"vibe-puzzles/docs/screenshots/calcudoku.png": {
+		"path": "/shots/vibe-puzzles/calcudoku",
+		"width": 391,
+		"height": 507,
+		"widths": [
+			391
+		]
+	},
+	"vibe-puzzles/docs/screenshots/hint.png": {
+		"path": "/shots/vibe-puzzles/hint",
+		"width": 404,
+		"height": 672,
+		"widths": [
+			404
+		]
+	},
+	"vibe-puzzles/docs/screenshots/home.png": {
+		"path": "/shots/vibe-puzzles/home",
+		"width": 1280,
+		"height": 837,
+		"widths": [
+			640,
+			1280
+		]
+	},
+	"vibe-puzzles/docs/screenshots/look-halloween-night.png": {
+		"path": "/shots/vibe-puzzles/look-halloween-night",
+		"width": 1280,
+		"height": 575,
+		"widths": [
+			640,
+			1280
+		]
+	},
+	"vibe-puzzles/docs/screenshots/loop.png": {
+		"path": "/shots/vibe-puzzles/loop",
+		"width": 462,
+		"height": 596,
+		"widths": [
+			462
+		]
+	},
+	"vibe-puzzles/docs/screenshots/phone-de-night.png": {
+		"path": "/shots/vibe-puzzles/phone-de-night",
+		"width": 390,
+		"height": 844,
+		"widths": [
+			390
+		]
+	},
+	"vibe-puzzles/docs/screenshots/pinwheel.png": {
+		"path": "/shots/vibe-puzzles/pinwheel",
+		"width": 463,
+		"height": 598,
+		"widths": [
+			463
+		]
+	},
+	"vibe-puzzles/docs/screenshots/pipes.png": {
+		"path": "/shots/vibe-puzzles/pipes",
+		"width": 447,
+		"height": 582,
+		"widths": [
+			447
+		]
+	},
+	"vibe-puzzles/docs/screenshots/tetroid.png": {
+		"path": "/shots/vibe-puzzles/tetroid",
+		"width": 446,
+		"height": 581,
+		"widths": [
+			446
+		]
+	},
+	"vibe-puzzles/docs/screenshots/trial.png": {
+		"path": "/shots/vibe-puzzles/trial",
+		"width": 419,
+		"height": 598,
+		"widths": [
+			419
+		]
+	},
+	"vibe-puzzles/docs/screenshots/widescreen.png": {
+		"path": "/shots/vibe-puzzles/widescreen",
+		"width": 1180,
+		"height": 820,
+		"widths": [
+			640,
+			1180
+		]
+	},
+	"vibe-soundlab/docs/screenshots/chords.png": {
+		"path": "/shots/vibe-soundlab/chords",
+		"width": 1456,
+		"height": 596,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"vibe-soundlab/docs/screenshots/code.png": {
+		"path": "/shots/vibe-soundlab/code",
+		"width": 1456,
+		"height": 1464,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"vibe-soundlab/docs/screenshots/live-edit.png": {
+		"path": "/shots/vibe-soundlab/live-edit",
+		"width": 1456,
+		"height": 1550,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"vibe-soundlab/docs/screenshots/mixer.png": {
+		"path": "/shots/vibe-soundlab/mixer",
+		"width": 1456,
+		"height": 1552,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"vibe-soundlab/docs/screenshots/now-playing.png": {
+		"path": "/shots/vibe-soundlab/now-playing",
+		"width": 1456,
+		"height": 526,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"vibe-soundlab/docs/screenshots/player.png": {
+		"path": "/shots/vibe-soundlab/player",
+		"width": 2560,
+		"height": 1600,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"vibe-soundlab/docs/screenshots/songs-from-github.png": {
+		"path": "/shots/vibe-soundlab/songs-from-github",
+		"width": 688,
+		"height": 1326,
+		"widths": [
+			640,
+			688
+		]
+	},
+	"vibe-soundlab/docs/screenshots/visuals-kernschmelze.png": {
+		"path": "/shots/vibe-soundlab/visuals-kernschmelze",
+		"width": 800,
+		"height": 500,
+		"widths": [
+			640,
+			800
+		]
+	},
+	"vibe-soundlab/docs/screenshots/visuals-nachtschicht.png": {
+		"path": "/shots/vibe-soundlab/visuals-nachtschicht",
+		"width": 800,
+		"height": 500,
+		"widths": [
+			640,
+			800
+		]
+	},
+	"vibe-soundlab/docs/screenshots/visuals-polarlicht.png": {
+		"path": "/shots/vibe-soundlab/visuals-polarlicht",
+		"width": 800,
+		"height": 500,
+		"widths": [
+			640,
+			800
+		]
+	},
+	"vibe-stundenplan/screenshots/app-dark-locked.png": {
+		"path": "/shots/vibe-stundenplan/app-dark-locked",
+		"width": 1280,
+		"height": 900,
+		"widths": [
+			640,
+			1280
+		]
+	},
+	"vibe-stundenplan/screenshots/app.png": {
+		"path": "/shots/vibe-stundenplan/app",
+		"width": 1280,
+		"height": 1009,
+		"widths": [
+			640,
+			1280
+		]
+	},
+	"vibe-stundenplan/screenshots/entry-modal.png": {
+		"path": "/shots/vibe-stundenplan/entry-modal",
+		"width": 420,
+		"height": 578,
+		"widths": [
+			420
+		]
+	},
+	"vibe-stundenplan/screenshots/time-modal.png": {
+		"path": "/shots/vibe-stundenplan/time-modal",
+		"width": 420,
+		"height": 418,
+		"widths": [
+			420
+		]
+	},
+	"vibe-visualizer/docs/screenshots/analysis.jpg": {
+		"path": "/shots/vibe-visualizer/analysis",
+		"width": 1440,
+		"height": 900,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"vibe-visualizer/docs/screenshots/controller.jpg": {
+		"path": "/shots/vibe-visualizer/controller",
+		"width": 1440,
+		"height": 900,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"vibe-visualizer/docs/screenshots/export-tracks.jpg": {
+		"path": "/shots/vibe-visualizer/export-tracks",
+		"width": 1440,
+		"height": 900,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"vibe-visualizer/docs/screenshots/kaleidoscope.jpg": {
+		"path": "/shots/vibe-visualizer/kaleidoscope",
+		"width": 1440,
+		"height": 900,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"vibe-visualizer/docs/screenshots/logo-spectrum.jpg": {
+		"path": "/shots/vibe-visualizer/logo-spectrum",
+		"width": 1440,
+		"height": 900,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"vibe-visualizer/docs/screenshots/mini-player.jpg": {
+		"path": "/shots/vibe-visualizer/mini-player",
+		"width": 640,
+		"height": 360,
+		"widths": [
+			640
+		]
+	},
+	"vibe-visualizer/docs/screenshots/neon-ribbons.jpg": {
+		"path": "/shots/vibe-visualizer/neon-ribbons",
+		"width": 1440,
+		"height": 900,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"vibe-visualizer/docs/screenshots/night-rain.jpg": {
+		"path": "/shots/vibe-visualizer/night-rain",
+		"width": 1440,
+		"height": 900,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"vibe-visualizer/docs/screenshots/sound.jpg": {
+		"path": "/shots/vibe-visualizer/sound",
+		"width": 1440,
+		"height": 900,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"vibe-visualizer/docs/screenshots/tiktok.jpg": {
+		"path": "/shots/vibe-visualizer/tiktok",
+		"width": 1440,
+		"height": 900,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"vibe-wormholesurfing/docs/screenshots/opening.png": {
+		"path": "/shots/vibe-wormholesurfing/opening",
+		"width": 1280,
+		"height": 720,
+		"widths": [
+			640,
+			1280
+		]
+	},
+	"vibe-wormholesurfing/docs/screenshots/reward.png": {
+		"path": "/shots/vibe-wormholesurfing/reward",
+		"width": 1280,
+		"height": 720,
+		"widths": [
+			640,
+			1280
+		]
+	},
+	"vibe-wormholesurfing/docs/screenshots/ride.png": {
+		"path": "/shots/vibe-wormholesurfing/ride",
+		"width": 1280,
+		"height": 720,
+		"widths": [
+			640,
+			1280
+		]
+	},
+	"vibe-wormholesurfing/docs/screenshots/title.png": {
+		"path": "/shots/vibe-wormholesurfing/title",
+		"width": 1280,
+		"height": 720,
+		"widths": [
+			640,
+			1280
+		]
+	},
+	"vibe-wormholesurfing/docs/screenshots/world.png": {
+		"path": "/shots/vibe-wormholesurfing/world",
+		"width": 1280,
+		"height": 720,
+		"widths": [
+			640,
+			1280
+		]
+	}
+}

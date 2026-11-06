@@ -1,0 +1,27 @@
+node_modules
+
+# This project uses pnpm (pnpm-lock.yaml); npm's lockfile must not come back.
+package-lock.json
+
+# Output
+/.svelte-kit
+/build
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Tests
+coverage
+playwright-report
+test-results
+*.log

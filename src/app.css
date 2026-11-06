@@ -1,0 +1,207 @@
+@import 'tailwindcss';
+/* Fraunces with its SOFT axis for headings, Roboto for text, Hack for labels: all self-hosted. */
+@import '@fontsource-variable/fraunces/soft.css';
+@import '@fontsource-variable/roboto';
+
+@font-face {
+	font-family: 'Hack';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('../node_modules/hack-font/build/web/fonts/hack-regular-subset.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Hack';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url('../node_modules/hack-font/build/web/fonts/hack-bold-subset.woff2') format('woff2');
+}
+
+/* Dark mode follows the `dark` class on <html>, which src/app.html and the theme switch set. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * The colors are tokens that dark mode redefines, so components say `bg-paper` or `text-muted`
+ * once instead of a light and a dark color each. Accents: violet, pink and sky, as in the
+ * hairline gradient at the top of the page.
+ */
+@theme {
+	--font-sans: 'Roboto Variable', ui-sans-serif, system-ui, sans-serif;
+	--font-serif: 'Fraunces Variable', ui-serif, Georgia, serif;
+	--font-mono: 'Hack', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+	--color-paper: #fbfaf7;
+	--color-surface: #ffffff;
+	--color-sunken: #f3f1ec;
+	--color-ink: #1c1a24;
+	--color-muted: #5c5868;
+	--color-line: #e6e2ea;
+	--color-grid: rgb(124 58 237 / 0.07);
+	--color-accent: #6d28d9;
+	--color-accent-soft: #ede9fe;
+	--color-pink: #be185d;
+	--color-pink-soft: #fce7f3;
+	--color-sky: #0369a1;
+	--color-sky-soft: #e0f2fe;
+	--color-on-accent: #ffffff;
+	--color-shot: #eceaf0;
+}
+
+@layer base {
+	.dark {
+		--color-paper: #0f0d16;
+		--color-surface: #17141f;
+		--color-sunken: #1d1927;
+		--color-ink: #ece9f3;
+		--color-muted: #a7a1b6;
+		--color-line: #2b2637;
+		--color-grid: rgb(167 139 250 / 0.07);
+		--color-accent: #b9a2fb;
+		--color-accent-soft: #2a2140;
+		--color-pink: #f9a8d4;
+		--color-pink-soft: #3a1d30;
+		--color-sky: #7dd3fc;
+		--color-sky-soft: #132a3a;
+		--color-on-accent: #160f24;
+		--color-shot: #221e2c;
+	}
+
+	html {
+		scroll-behavior: smooth;
+		-webkit-text-size-adjust: 100%;
+	}
+
+	body {
+		@apply bg-paper font-sans text-ink antialiased;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4 {
+		@apply font-serif;
+		font-variation-settings: 'SOFT' 100;
+		text-wrap: balance;
+	}
+
+	p,
+	li,
+	dd {
+		text-wrap: pretty;
+	}
+
+	::selection {
+		@apply bg-accent-soft text-ink;
+	}
+
+	:focus-visible {
+		@apply rounded-sm outline-2 outline-offset-2 outline-accent;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+		}
+	}
+}
+
+@utility label-mono {
+	@apply font-mono text-[0.7rem] tracking-[0.14em] uppercase;
+}
+
+/* Buttons and chips, shared by the hero, the cards and the contact section. */
+@utility btn {
+	@apply inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-[color,background-color,box-shadow,transform] duration-200 active:scale-[0.98];
+}
+
+@utility btn-primary {
+	@apply btn bg-accent text-on-accent shadow-sm shadow-accent/20 hover:bg-accent/90;
+}
+
+@utility btn-secondary {
+	@apply btn bg-surface text-ink ring-1 ring-line hover:text-accent hover:ring-accent/50;
+}
+
+@utility btn-ghost {
+	@apply btn text-muted hover:bg-sunken hover:text-ink;
+}
+
+@utility chip {
+	@apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium ring-1 ring-line ring-inset;
+}
+
+/* Graph paper behind the hero, fading out: the lab notebook. */
+@utility graph-paper {
+	background-image:
+		linear-gradient(to right, var(--color-grid) 1px, transparent 1px),
+		linear-gradient(to bottom, var(--color-grid) 1px, transparent 1px);
+	background-size: 24px 24px;
+	mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, black 30%, transparent 75%);
+}
+
+/* The hairline at the very top, and the underline of the active filter. */
+@utility rainbow {
+	background-image: linear-gradient(90deg, #38bdf8, #f472b6 50%, #a78bfa);
+}
+
+/* The satellite's orbit around the avatar (Hero.svelte). */
+@keyframes orbit {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@utility animate-orbit {
+	animation: orbit 14s linear infinite;
+}
+
+/*
+ * Printing, as a PDF to go with a CV: light colors, every project's details open, no buttons,
+ * menus or screenshot galleries, and the address after every link in the details.
+ */
+@media print {
+	@page {
+		margin: 14mm 12mm;
+	}
+
+	:root,
+	.dark {
+		--color-paper: #ffffff;
+		--color-surface: #ffffff;
+		--color-sunken: #ffffff;
+		--color-ink: #111111;
+		--color-muted: #444444;
+		--color-line: #d4d4d4;
+		--color-accent: #5b21b6;
+		--color-pink: #9d174d;
+		--color-sky: #075985;
+	}
+
+	html {
+		font-size: 11pt;
+	}
+
+	.print-open {
+		grid-template-rows: 1fr !important;
+	}
+
+	.print-url a[href^='http']::after {
+		content: ' (' attr(href) ')';
+		@apply text-muted;
+		word-break: break-all;
+	}
+
+	.print-avoid {
+		break-inside: avoid;
+	}
+}

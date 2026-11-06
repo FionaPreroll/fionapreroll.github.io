@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="%lang%">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="color-scheme" content="light dark" />
+		<meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)" />
+		<meta name="theme-color" content="#0f0d16" media="(prefers-color-scheme: dark)" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.svg" type="image/svg+xml" />
+		<script>
+			// Before the first paint: the color theme, by the rules of src/lib/theme.svelte.ts, and on
+			// / only, German for a browser that asks for it first, unless a language was chosen with
+			// the switch in the header (src/lib/language.ts). /en/ and /de/ never move.
+			{
+				let theme = null;
+				let lang = null;
+				try {
+					theme = localStorage.getItem('theme');
+					lang = localStorage.getItem('lang');
+				} catch {
+					// No storage: the system's theme and the address's language apply.
+				}
+				if (
+					theme === 'dark' ||
+					(theme !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches)
+				) {
+					document.documentElement.classList.add('dark');
+				}
+				const first = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+				if (location.pathname === '/' && !lang && /^de\b/i.test(first)) {
+					location.replace('/de/' + location.search + location.hash);
+				}
+			}
+		</script>
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
