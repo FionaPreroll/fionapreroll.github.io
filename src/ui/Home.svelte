@@ -9,7 +9,7 @@
 	import Header from './Header.svelte';
 	import Hero from './Hero.svelte';
 	import Icon from './Icon.svelte';
-	import Lightbox from './Lightbox.svelte';
+	import Lightbox, { type Viewer } from './Lightbox.svelte';
 	import Practices from './Practices.svelte';
 	import ProjectCard from './ProjectCard.svelte';
 	import SectionHeading from './SectionHeading.svelte';
@@ -24,7 +24,7 @@
 	/** The technology the projects are filtered by. */
 	let tech: string | null = $state(null);
 	/** The lightbox: which project's screenshots, and which one. */
-	let viewer: { slug: string; index: number } | null = $state(null);
+	let viewer: Viewer | null = $state(null);
 
 	const visible = $derived(
 		tech ? projects.filter((p) => p.stack.includes(tech as string)) : projects
@@ -34,7 +34,6 @@
 			(group) => group.projects.length > 0
 		)
 	);
-	const viewed = $derived(viewer ? (projects.find((p) => p.slug === viewer?.slug) ?? null) : null);
 
 	/** Its place on the whole page, whatever the filter: Gadget No. 01 stays No. 01. */
 	const numberOf = (slug: string) => projects.findIndex((p) => p.slug === slug) + 1;
@@ -140,7 +139,7 @@
 
 			{#each groups as group (group.id)}
 				<section class="mt-16" aria-labelledby="group-{group.id}">
-					<div class="flex items-baseline gap-4 border-b border-line pb-3">
+					<div class="flex break-after-avoid items-baseline gap-4 border-b border-line pb-3">
 						<h3 id="group-{group.id}" class="text-2xl font-semibold">
 							{t(`group.${group.id}.title`)}
 						</h3>
@@ -160,7 +159,7 @@
 								expanded={expanded[project.slug] ?? false}
 								ontoggle={(open) => (expanded[project.slug] = open)}
 								onpicktech={pickTech}
-								onopen={(index) => (viewer = { slug: project.slug, index })}
+								onopen={(index) => (viewer = { project, index })}
 							/>
 						{/each}
 					</div>
@@ -179,8 +178,7 @@
 <Footer />
 
 <Lightbox
-	project={viewed}
-	index={viewer?.index ?? 0}
-	onindex={(index) => viewer && (viewer = { ...viewer, index })}
+	{viewer}
+	onindex={(index) => (viewer = { ...viewer!, index })}
 	onclose={() => (viewer = null)}
 />

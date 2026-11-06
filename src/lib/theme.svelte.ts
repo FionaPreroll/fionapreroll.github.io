@@ -5,11 +5,11 @@ export type ThemeChoice = 'system' | 'light' | 'dark';
 
 export const THEME_KEY = 'theme';
 
-const ORDER: readonly ThemeChoice[] = ['system', 'light', 'dark'];
+const NEXT: Record<ThemeChoice, ThemeChoice> = { system: 'light', light: 'dark', dark: 'system' };
 
 /** The choice after `choice` when the switch is pressed: system, light, dark and round again. */
 export function nextTheme(choice: ThemeChoice): ThemeChoice {
-	return ORDER[(ORDER.indexOf(choice) + 1) % ORDER.length] ?? 'system';
+	return NEXT[choice];
 }
 
 /** The stored choice; the system's unless light or dark was stored. */
@@ -22,9 +22,16 @@ export function readTheme(storage: Pick<Storage, 'getItem'> | null): ThemeChoice
 	}
 }
 
+/** The part of matchMedia('(prefers-color-scheme: dark)') that the theme uses. */
+export interface ColorSchemeQuery {
+	readonly matches: boolean;
+	addEventListener(type: 'change', listener: (event: MediaQueryListEvent) => void): void;
+	removeEventListener(type: 'change', listener: (event: MediaQueryListEvent) => void): void;
+}
+
 export interface ThemeOptions {
 	storage?: Pick<Storage, 'getItem' | 'setItem' | 'removeItem'> | null;
-	media?: Pick<MediaQueryList, 'matches' | 'addEventListener' | 'removeEventListener'> | null;
+	media?: ColorSchemeQuery | null;
 	root?: () => HTMLElement;
 }
 

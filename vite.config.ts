@@ -30,7 +30,30 @@ export default defineConfig({
 			// lcov for Codecov, a table for the terminal.
 			reporter: ['text', 'lcov'],
 			// Below 95 %, `pnpm test:coverage` (and with it `pnpm check` and CI) fails.
-			thresholds: { lines: 95, statements: 95, functions: 95, branches: 95 }
+			thresholds: { lines: 95, statements: 95, functions: 95, branches: 95 },
+			// Two kinds of code that the Svelte compiler adds to every component and that no test can
+			// reach: `value ?? ''` behind every {value} in markup, for a value that is never null, and
+			// the hot reloading of the dev server. Nothing else is ignored.
+			ignoreNode: (node, type) => {
+				if (
+					type === 'branch' &&
+					node.type === 'LogicalExpression' &&
+					node.operator === '??' &&
+					node.right.type === 'Literal' &&
+					node.right.value === ''
+				) {
+					return true;
+				}
+				if (
+					node.type === 'IfStatement' &&
+					node.test.type === 'MemberExpression' &&
+					node.test.object.type === 'MetaProperty' &&
+					node.test.property.type === 'Identifier' &&
+					node.test.property.name === 'hot'
+				) {
+					return 'ignore-this-and-nested-nodes';
+				}
+			}
 		}
 	}
 });

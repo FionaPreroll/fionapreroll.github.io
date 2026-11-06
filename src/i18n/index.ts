@@ -16,10 +16,11 @@ export function translate(lang: Lang, key: MessageKey, params: Params = {}): str
 	);
 }
 
-/** A month given as YYYY-MM, such as "Oct 2026" or "Okt. 2026". */
+/** A month given as YYYY-MM, such as "Oct 2026" or "Okt. 2026"; anything else as it is. */
 export function formatMonth(lang: Lang, month: string): string {
-	const [year, m] = month.split('-').map(Number);
-	const date = new Date(Date.UTC(year ?? 1970, (m ?? 1) - 1, 1));
+	const match = /^(\d{4})-(\d{2})$/.exec(month);
+	if (!match) return month;
+	const date = new Date(Date.UTC(Number(match[1]), Number(match[2]) - 1, 1));
 	return new Intl.DateTimeFormat(lang, { month: 'short', year: 'numeric', timeZone: 'UTC' }).format(
 		date
 	);

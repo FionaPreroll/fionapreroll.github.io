@@ -5,6 +5,9 @@
 	import Icon from './Icon.svelte';
 	import Satellite from './Satellite.svelte';
 
+	/** Shows the "Open to new opportunities" badge; profile.ts decides it for the page. */
+	let { openToWork = profile.openToWork }: { openToWork?: boolean } = $props();
+
 	const { t } = useI18n();
 
 	const facts = $derived([
@@ -27,7 +30,7 @@
 	<div class="mx-auto max-w-6xl px-4 pt-14 pb-16 sm:px-6 sm:pt-24 sm:pb-20 print:pt-0 print:pb-6">
 		<div class="flex flex-col-reverse gap-10 md:flex-row md:items-center md:justify-between">
 			<div class="max-w-2xl">
-				{#if profile.openToWork}
+				{#if openToWork}
 					<p
 						class="mb-6 inline-flex items-center gap-2 rounded-full bg-surface px-3 py-1 text-sm text-muted ring-1 ring-line"
 					>

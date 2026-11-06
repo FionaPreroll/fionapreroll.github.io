@@ -193,6 +193,7 @@
 
 	.print-open {
 		grid-template-rows: 1fr !important;
+		visibility: visible !important;
 	}
 
 	.print-url a[href^='http']::after {

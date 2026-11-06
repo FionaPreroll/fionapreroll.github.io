@@ -22,8 +22,8 @@ export function otherLang(lang: Lang): Lang {
 export const LANG_KEY = 'lang';
 
 /**
- * Remembers a language chosen with the switch, so that / no longer moves to German for a German
- * browser (see the script in src/app.html).
+ * Remembers a language chosen with the switch: / then shows that language, whatever the browser
+ * asks for (see the script in src/app.html).
  */
 export function rememberLang(lang: Lang, storage: Pick<Storage, 'setItem'> | null = safeStorage()) {
 	try {

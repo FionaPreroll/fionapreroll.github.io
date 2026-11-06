@@ -174,7 +174,9 @@
 	<!-- Always in the page, for search engines and printing; folded away with a grid row. -->
 	<div
 		id={detailsId}
-		class="print-open grid transition-[grid-template-rows] duration-500 ease-out"
+		class="print-open grid transition-[grid-template-rows,visibility] duration-500 ease-out print:visible {expanded
+			? 'visible'
+			: 'invisible'}"
 		style:grid-template-rows={expanded ? '1fr' : '0fr'}
 		inert={!expanded}
 		data-expanded={expanded}
