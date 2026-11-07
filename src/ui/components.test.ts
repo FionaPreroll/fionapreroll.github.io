@@ -41,6 +41,16 @@ describe('Icon', () => {
 });
 
 describe('ExternalLink', () => {
+	it('names a link of only an icon by its label, with a tooltip', () => {
+		renderIn(ExternalLink, {
+			href: 'https://example.com/',
+			label: 'Example',
+			children: createRawSnippet(() => ({ render: () => '<span>★</span>' }))
+		});
+		const link = screen.getByRole('link', { name: 'Example (opens on another site)' });
+		expect(link).toHaveAttribute('title', 'Example');
+	});
+
 	it('opens in a new tab and says so to screen readers', () => {
 		renderIn(ExternalLink, {
 			href: 'https://example.com/',
@@ -170,6 +180,9 @@ describe('Footer', () => {
 			'href',
 			'https://github.com/FionaPreroll/fionapreroll.github.io'
 		);
+		const dashboard = screen.getByRole('link', { name: 'Dashboard' });
+		expect(dashboard).toHaveAttribute('href', '/de/dashboard/');
+		expect(dashboard).toHaveAttribute('rel', 'nofollow');
 	});
 });
 

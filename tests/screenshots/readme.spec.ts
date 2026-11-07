@@ -10,9 +10,9 @@ test.beforeEach(async ({ page }) => {
 	await page.emulateMedia({ reducedMotion: 'reduce', colorScheme: 'light' });
 });
 
-async function open(page: import('@playwright/test').Page, path = '/en/') {
+async function open(page: import('@playwright/test').Page, path = '/en/', ready = 'dialog') {
 	await page.goto(path);
-	await hydrated(page);
+	await hydrated(page, ready);
 	await loadAllImages(page);
 }
 
@@ -73,6 +73,25 @@ test('phone', async ({ page }) => {
 	await page.setViewportSize({ width: 390, height: 844 });
 	await open(page);
 	await expect(page).toHaveScreenshot(['docs', 'screenshots', 'phone.png']);
+});
+
+/** A badge as shields draw them, so that the picture does not change with the state of CI. */
+function badge(left: string, right: string): string {
+	const l = left.length * 7 + 10;
+	const r = right.length * 7 + 10;
+	return `<svg xmlns="http://www.w3.org/2000/svg" width="${l + r}" height="20"><rect width="${l + r}" height="20" rx="3" fill="#555"/><rect x="${l}" width="${r}" height="20" rx="3" fill="#4c1"/><g fill="#fff" font-family="Verdana,sans-serif" font-size="11"><text x="5" y="14">${left}</text><text x="${l + 5}" y="14">${right}</text></g></svg>`;
+}
+
+test('dashboard', async ({ page }) => {
+	await page.route(/actions\/workflows\/.*badge\.svg/, (route) =>
+		route.fulfill({ contentType: 'image/svg+xml', body: badge('CI', 'passing') })
+	);
+	await page.route(/codecov\.io\/.*badge\.svg/, (route) =>
+		route.fulfill({ contentType: 'image/svg+xml', body: badge('codecov', '100%') })
+	);
+	await page.setViewportSize({ width: 1280, height: 860 });
+	await open(page, '/en/dashboard/', 'main');
+	await expect(page).toHaveScreenshot(['docs', 'screenshots', 'dashboard.png']);
 });
 
 test('link preview', async ({ page }) => {

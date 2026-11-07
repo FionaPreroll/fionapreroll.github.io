@@ -9,8 +9,9 @@
 		<link rel="icon" href="%sveltekit.assets%/favicon.svg" type="image/svg+xml" />
 		<script>
 			// Before the first paint: the color theme, by the rules of src/lib/theme.svelte.ts, and on
-			// / only, German if it was chosen with the switch in the header (src/lib/language.ts) or,
-			// with nothing chosen, if the browser asks for it first. /en/ and /de/ never move.
+			// an address without /en/ or /de/ (/ and /dashboard/), German if it was chosen with the
+			// switch in the header (src/lib/language.ts) or, with nothing chosen, if the browser asks
+			// for it first. Addresses under /en/ and /de/ never move.
 			{
 				let theme = null;
 				let lang = null;
@@ -27,8 +28,9 @@
 					document.documentElement.classList.add('dark');
 				}
 				const first = (navigator.languages && navigator.languages[0]) || navigator.language || '';
-				if (location.pathname === '/' && (lang === 'de' || (!lang && /^de\b/i.test(first)))) {
-					location.replace('/de/' + location.search + location.hash);
+				const bare = !/^\/(en|de)\//.test(location.pathname);
+				if (bare && (lang === 'de' || (!lang && /^de\b/i.test(first)))) {
+					location.replace('/de' + location.pathname + location.search + location.hash);
 				}
 			}
 		</script>

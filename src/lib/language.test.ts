@@ -31,6 +31,7 @@ describe('the languages of the page', () => {
 	it('have addresses that never move to the other language', () => {
 		expect(pathOf('en')).toBe('/en/');
 		expect(pathOf('de')).toBe('/de/');
+		expect(pathOf('en', 'dashboard/')).toBe('/en/dashboard/');
 	});
 
 	it('switch to each other', () => {

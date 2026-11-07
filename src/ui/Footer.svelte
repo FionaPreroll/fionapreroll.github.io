@@ -1,10 +1,12 @@
 <script lang="ts">
 	import { profile } from '../content/profile.ts';
 	import { useI18n } from '../i18n/index.ts';
+	import { pathOf } from '../lib/language.ts';
 	import ExternalLink from './ExternalLink.svelte';
 	import Icon from './Icon.svelte';
 
-	const { t } = useI18n();
+	const i18n = useI18n();
+	const { t } = i18n;
 
 	const year = new Date().getFullYear();
 </script>
@@ -21,6 +23,15 @@
 			<a href="#top" class="inline-flex items-center gap-1 hover:text-accent">
 				{t('footer.top')}
 				<Icon name="arrow-up" class="size-3.5" />
+			</a>
+			<!-- Mostly for Fiona herself: a quiet way to her deployments and repositories. -->
+			<a
+				href={pathOf(i18n.lang, 'dashboard/')}
+				rel="nofollow"
+				class="inline-flex items-center gap-1 hover:text-accent"
+			>
+				<Icon name="squares-2x2" class="size-3.5" />
+				{t('dashboard.link')}
 			</a>
 		</p>
 	</div>

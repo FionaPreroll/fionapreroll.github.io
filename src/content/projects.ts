@@ -40,6 +40,7 @@ export const projects: Project[] = [
 		name: 'Wormhole Surfing',
 		group: 'games',
 		started: '2026-11',
+		ci: { workflow: 'ci.yml', coverage: true },
 		tagline: {
 			en: 'A 3D browser game: surf a wormhole on a cute spaceship and warp into strange worlds full of treasure.',
 			de: 'Ein 3D-Browserspiel: mit einem niedlichen Raumschiff durch ein Wurmloch surfen und in seltsame Welten voller Schätze springen.'
@@ -156,6 +157,7 @@ export const projects: Project[] = [
 		name: 'Vibe Puzzles',
 		group: 'games',
 		started: '2026-10',
+		ci: { workflow: 'ci.yml', coverage: true },
 		tagline: {
 			en: 'Six logic puzzles with unique solutions, generated on the device, with hints that explain the next step.',
 			de: 'Sechs Logikrätsel mit eindeutiger Lösung, erzeugt auf dem Gerät, mit Tipps, die den nächsten Schritt erklären.'
@@ -308,6 +310,7 @@ export const projects: Project[] = [
 		name: 'Vibe Laser',
 		group: 'games',
 		started: '2026-10',
+		ci: { workflow: 'ci.yml', coverage: true },
 		tagline: {
 			en: 'A laser logic puzzle: place mirrors, prisms and filters until every coin is lit in exactly its color.',
 			de: 'Ein Laser-Logikrätsel: Spiegel, Prismen und Filter setzen, bis jede Münze in genau ihrer Farbe leuchtet.'
@@ -435,6 +438,7 @@ export const projects: Project[] = [
 		name: 'Spielekiste',
 		group: 'networking',
 		started: '2026-11',
+		ci: { workflow: 'ci.yml', coverage: true },
 		tagline: {
 			en: 'Board, card, dice and party games for phones side by side, connected directly by QR code, without internet or a server.',
 			de: 'Brett-, Karten-, Würfel- und Partyspiele für Handys nebeneinander, direkt per QR-Code verbunden, ohne Internet und ohne Server.'
@@ -573,6 +577,7 @@ export const projects: Project[] = [
 		name: 'PortRedirect',
 		group: 'networking',
 		started: '2026-10',
+		ci: { workflow: 'rust-test.yml', coverage: true },
 		tagline: {
 			en: 'Glue your frontend to the backend: a lightweight TCP forwarder that tunnels connections over QUIC.',
 			de: 'Frontend und Backend verkleben: ein schlanker TCP-Forwarder, der Verbindungen durch einen QUIC-Tunnel leitet.'
@@ -680,6 +685,7 @@ export const projects: Project[] = [
 		name: 'Spark Hunt',
 		group: 'networking',
 		started: '2026-10',
+		ci: { workflow: 'ci.yml', coverage: true },
 		tagline: {
 			en: 'A real-time game for phones lying side by side, with no internet and no server, not even to connect.',
 			de: 'Ein Echtzeitspiel für Handys, die nebeneinander liegen, ohne Internet und ohne Server, nicht einmal zum Verbinden.'
@@ -821,6 +827,7 @@ export const projects: Project[] = [
 		name: 'Vibe Soundlab',
 		group: 'audio',
 		started: '2026-10',
+		ci: { workflow: 'ci.yml', coverage: true },
 		tagline: {
 			en: 'Drum & bass and chiptunes written as code in Strudel, and a browser player with a mixer, live chords and visuals.',
 			de: 'Drum & Bass und Chiptunes, als Code in Strudel geschrieben, und ein Browser-Player mit Mischpult, Live-Akkorden und Visuals.'
@@ -947,6 +954,7 @@ export const projects: Project[] = [
 		name: 'musicbanana',
 		group: 'audio',
 		started: '2026-10',
+		ci: { workflow: 'ci.yml', coverage: true },
 		tagline: {
 			en: 'A free, self-hosted home for your listening history: scrobbling, charts, reviews and statistics.',
 			de: 'Ein freies, selbst gehostetes Zuhause für die eigene Hörhistorie: Scrobbling, Charts, Rückblicke und Statistiken.'
@@ -1094,6 +1102,7 @@ export const projects: Project[] = [
 		name: 'FibeStation',
 		group: 'audio',
 		started: '2026-09',
+		ci: { workflow: 'ci.yml', coverage: true },
 		tagline: {
 			en: 'An audio-reactive music visualizer that renders HD videos for YouTube and TikTok, right in the browser.',
 			de: 'Ein audioreaktiver Musik-Visualizer, der HD-Videos für YouTube und TikTok rendert, direkt im Browser.'
@@ -1247,6 +1256,7 @@ export const projects: Project[] = [
 		name: 'Vibe-Stundenplan',
 		group: 'everyday',
 		started: '2026-09',
+		ci: { workflow: 'ci.yml', coverage: false },
 		tagline: {
 			en: 'A weekly timetable in the browser: no account, no backend, no build step.',
 			de: 'Ein Wochenstundenplan im Browser: kein Konto, kein Backend, kein Build-Schritt.'

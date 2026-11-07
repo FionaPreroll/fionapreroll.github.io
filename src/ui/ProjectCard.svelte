@@ -1,11 +1,12 @@
 <script lang="ts">
-	import type { LinkKind, Platform, Project, ProjectLink } from '../content/types.ts';
+	import type { Platform, Project, ProjectLink } from '../content/types.ts';
 	import { formatMonth, useI18n } from '../i18n/index.ts';
 	import ExternalLink from './ExternalLink.svelte';
 	import Gallery from './Gallery.svelte';
 	import HeroShots from './HeroShots.svelte';
 	import Icon from './Icon.svelte';
 	import type { IconName } from './icons.ts';
+	import { linkIcon } from './linkIcons.ts';
 
 	interface Props {
 		project: Project;
@@ -36,18 +37,6 @@
 
 	const i18n = useI18n();
 	const { t, l } = i18n;
-
-	const linkIcon: Record<LinkKind, IconName> = {
-		live: 'rocket-launch',
-		apk: 'arrow-down-tray',
-		releases: 'tag',
-		packages: 'cube',
-		docker: 'cube-transparent',
-		readme: 'book-open',
-		docs: 'document-text',
-		changelog: 'clock',
-		privacy: 'shield-check'
-	};
 
 	const platformIcon: Record<Platform, IconName> = {
 		web: 'globe-alt',

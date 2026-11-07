@@ -40,6 +40,8 @@ export interface Project {
 	group: GroupId;
 	/** The month of the first commit, as YYYY-MM. */
 	started: string;
+	/** For the dashboard: the workflow whose badge says whether main is green, and Codecov. */
+	ci: { workflow: string; coverage: boolean };
 	tagline: Localized;
 	motivation: Localized;
 	summary: Localized;

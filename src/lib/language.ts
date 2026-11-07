@@ -9,9 +9,12 @@ export function langOf(param: string | undefined): Lang {
 	return param === 'de' ? 'de' : 'en';
 }
 
-/** The address of the page in `lang`: /en/ and /de/, which never move to another language. */
-export function pathOf(lang: Lang): string {
-	return `/${lang}/`;
+/**
+ * The address of a page in `lang`, such as /de/ or /en/dashboard/: these never move to another
+ * language. `page` is the part after the language, ending in a slash.
+ */
+export function pathOf(lang: Lang, page = ''): string {
+	return `/${lang}/${page}`;
 }
 
 /** The other language, which the switch in the header leads to. */

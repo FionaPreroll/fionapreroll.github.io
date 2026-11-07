@@ -19,9 +19,12 @@ export async function loadAllImages(page: Page): Promise<void> {
 	});
 }
 
-/** Waits until SvelteKit has started, so that clicks reach the page's code. */
-export async function hydrated(page: Page): Promise<void> {
+/**
+ * Waits until SvelteKit has started, so that clicks reach the page's code: the homepage is ready
+ * once its lightbox is there, other pages once `ready` is.
+ */
+export async function hydrated(page: Page, ready = 'dialog'): Promise<void> {
 	await expect(page.locator('body')).toHaveAttribute('data-sveltekit-preload-data', 'hover');
-	await page.waitForFunction(() => document.querySelector('dialog') !== null);
+	await page.waitForFunction((selector) => document.querySelector(selector) !== null, ready);
 	await page.waitForLoadState('networkidle');
 }

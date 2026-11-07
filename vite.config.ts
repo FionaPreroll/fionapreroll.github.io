@@ -11,8 +11,11 @@ export default defineConfig({
 			compilerOptions: { runes: true },
 			// A static site for GitHub Pages: every page is prerendered to HTML at build time.
 			adapter: adapter(),
-			// English at / and /en/, German at /de/ (see src/params.ts and README, "Languages").
-			prerender: { entries: ['/', '/en/', '/de/'] }
+			// English at / and /en/, German at /de/ (see src/params.ts and README, "Languages"), and
+			// the dashboard under each.
+			prerender: {
+				entries: ['/', '/en/', '/de/', '/dashboard/', '/en/dashboard/', '/de/dashboard/']
+			}
 		}),
 		// Only in Vitest: Svelte's browser build and a cleanup after every test.
 		svelteTesting()

@@ -63,7 +63,7 @@ src/
   i18n/         English and German texts (en.ts, de.ts), t(), l() and the month format
   lib/          the language rules and the color theme
   ui/           the components: Home.svelte puts the page together
-  routes/       [[lang=lang]]: /, /en/ and /de/, all prerendered
+  routes/       [[lang=lang]]: /, /en/ and /de/, and the dashboard under each, all prerendered
   params.ts     the matcher for [[lang]]
   hooks.server.ts  writes the language into <html lang> while prerendering
   app.html      the page around it, with the script that sets theme and language before the first paint
@@ -87,9 +87,17 @@ Everything about the projects lives in `src/content/projects.ts`, in the order o
 
 ## Languages
 
-English is at `/` and `/en/`, German at `/de/`; all three are prerendered, with `<html lang>`, `hreflang` links, canonical addresses and Open Graph tags of their own. `/en/` and `/de/` never move, so they are the links to give for a CV in one language. `/` moves to `/de/` before the first paint (the script in `src/app.html`) when German was chosen with the switch in the header, or, with nothing chosen, when the browser asks for German first. The switch remembers the choice in `localStorage` under `lang`.
+English is at `/` and `/en/`, German at `/de/`; all three are prerendered, with `<html lang>`, `hreflang` links, canonical addresses and Open Graph tags of their own. Addresses under `/en/` and `/de/` never move, so they are the links to give for a CV in one language. An address without either, `/` or `/dashboard/`, moves to its German one before the first paint (the script in `src/app.html`) when German was chosen with the switch in the header, or, with nothing chosen, when the browser asks for German first. The switch remembers the choice in `localStorage` under `lang`, and leads to the same page in the other language.
 
 Every text of the page goes through `t()` from `useI18n()` (`src/i18n`), whose catalogs `en.ts` and `de.ts` must have the same keys: `de.ts` is typed against `en.ts`, so a missing text fails the type check, and a test compares their placeholders. Texts in `src/content/` are `{ en, de }` pairs, shown with `l()`. Components never import from `$app`: they get the language from `Home.svelte`'s context and what else they need as props, so they render the same in Vitest.
+
+## Dashboard
+
+`/dashboard/` (and `/en/dashboard/`, `/de/dashboard/`) is a compact page for Fiona herself: every project, in the groups of the homepage, and this site, each in one row with the badges of its CI on `main` and its Codecov coverage, and links to its deployment, repository, Actions, issues and pull requests, then its downloads (the Android app, releases, packages and Docker images). Only a small link at the end of the footer leads there, with `rel="nofollow"`, and the page asks search engines not to index it; anyone who knows the address can still open it.
+
+![The dashboard: the repositories in their groups, with CI and coverage badges and link icons](docs/screenshots/dashboard.png)
+
+Its rows come from `src/content/dashboard.ts`, which builds them from `projects.ts`: each project's `ci` names the workflow whose badge shows (`ci.yml`, or `rust-test.yml` for PortRedirect) and whether it reports coverage. The badges are images from GitHub and Codecov, so they show the state of now; the README's picture uses stand-ins, so that it does not change with CI.
 
 ## Design
 

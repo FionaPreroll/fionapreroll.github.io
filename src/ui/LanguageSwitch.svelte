@@ -4,14 +4,20 @@
 	import { otherLang, pathOf, rememberLang } from '../lib/language.ts';
 	import Icon from './Icon.svelte';
 
-	let { lang }: { lang: Lang } = $props();
+	interface Props {
+		lang: Lang;
+		/** The page after the language, such as dashboard/: the switch leads to the same page. */
+		page?: string;
+	}
+
+	let { lang, page = '' }: Props = $props();
 
 	const other = $derived(otherLang(lang));
 </script>
 
 <!-- In the other language, so that it reads right to whoever is looking for it. -->
 <a
-	href={pathOf(other)}
+	href={pathOf(other, page)}
 	hreflang={other}
 	lang={other}
 	data-sveltekit-noscroll
