@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { dashboard } from './dashboard.ts';
+import { dashboard, row } from './dashboard.ts';
 import { projects } from './projects.ts';
 
 const repos = dashboard.flatMap((group) => group.repos);
@@ -43,8 +43,19 @@ describe('the dashboard', () => {
 	it('knows the repositories that differ', () => {
 		expect(repo('vibe-portredirect').ci.badge).toContain('/actions/workflows/rust-test.yml/');
 		expect(repo('vibe-portredirect').live).toBeUndefined();
-		expect(repo('vibe-stundenplan').coverage).toBeUndefined();
+		expect(repo('vibe-stundenplan').coverage?.page).toBe(
+			'https://codecov.io/gh/FionaPreroll/vibe-stundenplan'
+		);
+		expect(repos.every((r) => r.coverage)).toBe(true);
 		expect(repo('fionapreroll.github.io').live).toBe('https://fionapreroll.github.io/');
+	});
+
+	it('leaves out Codecov for a repository that reports no coverage', () => {
+		const plain = row('demo', 'Demo', { workflow: 'test.yml', coverage: false }, undefined, []);
+		expect(plain.coverage).toBeUndefined();
+		expect(plain.ci.badge).toBe(
+			'https://github.com/FionaPreroll/demo/actions/workflows/test.yml/badge.svg?branch=main'
+		);
 	});
 
 	it('gathers the downloads: the app, releases, packages and Docker images', () => {

@@ -13,7 +13,13 @@
 	// The dashboard: every deployment and repository in one compact list, for Fiona herself. Only
 	// a small link in the homepage's footer leads here, and search engines are asked to skip it.
 
-	let { lang }: { lang: Lang } = $props();
+	interface Props {
+		lang: Lang;
+		/** The rows to show: those of src/content/dashboard.ts unless given. */
+		groups?: DashboardGroup[];
+	}
+
+	let { lang, groups = dashboard }: Props = $props();
 
 	const { t, l } = setI18n(createI18n(() => lang));
 
@@ -21,7 +27,7 @@
 		document.documentElement.lang = lang;
 	});
 
-	const count = dashboard.reduce((sum, group) => sum + group.repos.length, 0);
+	const count = $derived(groups.reduce((sum, group) => sum + group.repos.length, 0));
 
 	const title = (id: DashboardGroup['id']) =>
 		id === 'site' ? t('dashboard.group.site') : t(`group.${id}.title`);
@@ -64,7 +70,7 @@
 	<h1 class="mt-2 text-3xl font-semibold tracking-tight">{t('dashboard.title')}</h1>
 	<p class="mt-2 text-muted">{t('dashboard.intro')}</p>
 
-	{#each dashboard as group (group.id)}
+	{#each groups as group (group.id)}
 		<section class="mt-10" aria-labelledby="dash-{group.id}">
 			<h2
 				id="dash-{group.id}"

@@ -28,7 +28,8 @@ export interface DashboardGroup {
 
 const DOWNLOADS = new Set(['apk', 'releases', 'packages', 'docker']);
 
-function row(
+/** The row of a repository: its addresses, from its slug, name and the rest. */
+export function row(
 	slug: string,
 	name: string,
 	ci: Project['ci'],

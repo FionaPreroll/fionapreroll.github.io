@@ -1256,7 +1256,7 @@ export const projects: Project[] = [
 		name: 'Vibe-Stundenplan',
 		group: 'everyday',
 		started: '2026-09',
-		ci: { workflow: 'ci.yml', coverage: false },
+		ci: { workflow: 'ci.yml', coverage: true },
 		tagline: {
 			en: 'A weekly timetable in the browser: no account, no backend, no build step.',
 			de: 'Ein Wochenstundenplan im Browser: kein Konto, kein Backend, kein Build-Schritt.'
@@ -1289,8 +1289,8 @@ export const projects: Project[] = [
 		],
 		engineering: [
 			{
-				en: 'Plain JavaScript modules without dependencies, tested with Node’s built-in test runner.',
-				de: 'Reine JavaScript-Module ohne Abhängigkeiten, getestet mit dem eingebauten Test-Runner von Node.'
+				en: 'Plain JavaScript modules without dependencies, tested with Node’s built-in test runner; CI fails below 95 % coverage and reports it to Codecov.',
+				de: 'Reine JavaScript-Module ohne Abhängigkeiten, getestet mit dem eingebauten Test-Runner von Node; die CI scheitert unter 95 % Coverage und meldet sie an Codecov.'
 			},
 			{
 				en: 'A small Playwright suite guards the layout, and CI takes the screenshots again on every push.',

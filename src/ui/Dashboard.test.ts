@@ -1,5 +1,6 @@
 import { render, screen, within } from '@testing-library/svelte';
 import { describe, expect, it } from 'vitest';
+import { dashboard } from '../content/dashboard.ts';
 import Dashboard from './Dashboard.svelte';
 
 const row = (slug: string) =>
@@ -81,7 +82,19 @@ describe('Dashboard', () => {
 		expect(
 			document.querySelector('[data-repo="vibe-portredirect"] li[aria-hidden="true"]')
 		).not.toBeNull();
-		expect(row('vibe-stundenplan').getByText('no coverage')).toBeInTheDocument();
+		expect(screen.queryByText('no coverage')).not.toBeInTheDocument();
+	});
+
+	it('says when a repository reports no coverage', () => {
+		const [games] = dashboard;
+		const laser = games!.repos.find((r) => r.slug === 'vibe-laser')!;
+		render(Dashboard, {
+			lang: 'en',
+			groups: [{ id: 'games', repos: [{ ...laser, coverage: undefined }] }]
+		});
+		expect(screen.getByText('Mission control · 1 repositories')).toBeInTheDocument();
+		expect(row('vibe-laser').getByText('no coverage')).toBeInTheDocument();
+		expect(row('vibe-laser').queryByRole('link', { name: /^Coverage/ })).toBeNull();
 	});
 
 	it('names every download by its project', () => {
