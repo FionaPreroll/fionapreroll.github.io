@@ -40,6 +40,9 @@ jobs:
           files: coverage/lcov.info
           flags: unit
           disable_search: true
+          # A failed upload (e.g. Codecov does not know the repository) fails the run instead of
+          # only showing up in the log.
+          fail_ci_if_error: true
       - run: pnpm build
       - run: pnpm exec playwright install --with-deps chromium
       - run: pnpm exec playwright test
