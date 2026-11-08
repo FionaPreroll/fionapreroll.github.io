@@ -901,7 +901,7 @@ export const projects: Project[] = [
 					en: 'A built-in preset for the AKG K240 Studio, and the frequency response of its correction',
 					de: 'Ein eingebautes Preset für den AKG K240 Studio und der Frequenzgang seiner Korrektur'
 				},
-				focus: 'top'
+				uncropped: true
 			}
 		],
 		gallery: [

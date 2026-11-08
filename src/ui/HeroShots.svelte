@@ -16,11 +16,15 @@
 	const shots = $derived(project.hero.map((shot) => ({ shot, pic: picture(project.slug, shot) })));
 	// Several pictures are phones held upright: they stand side by side like polaroids.
 	const phones = $derived(shots.length > 1);
+	// A single picture fills the frame, cropped, unless it asks to be shown whole.
+	const whole = $derived(!phones && project.hero[0]?.uncropped === true);
 	const tilt = ['-rotate-3 translate-y-3', '-translate-y-2 z-10', 'rotate-3 translate-y-3'];
 </script>
 
 <div
-	class="relative aspect-16/10 overflow-hidden rounded-2xl bg-shot ring-1 ring-line print:max-w-[65%]"
+	class="relative overflow-hidden rounded-2xl bg-shot ring-1 ring-line print:max-w-[65%] {whole
+		? ''
+		: 'aspect-16/10'}"
 >
 	{#if phones}
 		<div
@@ -69,10 +73,11 @@
 					alt={l(shot.caption)}
 					loading="lazy"
 					decoding="async"
-					class="size-full object-cover transition-transform duration-500 group-hover:scale-[1.02] {shot.focus ===
-					'top'
-						? 'object-top'
-						: 'object-center'}"
+					class="transition-transform duration-500 group-hover:scale-[1.02] {whole
+						? 'block h-auto w-full'
+						: shot.focus === 'top'
+							? 'size-full object-cover object-top'
+							: 'size-full object-cover object-center'}"
 				/>
 			</button>
 		{/each}

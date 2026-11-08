@@ -32,6 +32,8 @@ export interface Shot {
 	caption: Localized;
 	/** The part that stays in view when the picture is cropped to the hero frame. */
 	focus?: 'top' | 'center';
+	/** Shows the whole picture at its own aspect ratio, instead of cropping it to the hero frame. */
+	uncropped?: boolean;
 }
 
 export interface Project {

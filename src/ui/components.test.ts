@@ -91,6 +91,22 @@ describe('ProjectCard', () => {
 		expect(onopen).toHaveBeenCalledWith(4);
 	});
 
+	it('crops a single screenshot to the frame, unless it asks to be shown whole', () => {
+		const hero = () => document.querySelector('article img');
+		const frame = () => hero()?.closest('button')?.parentElement;
+		card(bySlug('vibe-musicbanana'));
+		expect(hero()).toHaveClass('object-cover', 'object-top');
+		expect(frame()).toHaveClass('aspect-16/10');
+		document.body.innerHTML = '';
+		card(bySlug('vibe-portredirect'));
+		expect(hero()).toHaveClass('object-cover', 'object-center');
+		document.body.innerHTML = '';
+		card(bySlug('audioref'));
+		expect(hero()).toHaveClass('h-auto', 'w-full');
+		expect(hero()).not.toHaveClass('object-cover');
+		expect(frame()).not.toHaveClass('aspect-16/10');
+	});
+
 	it('offers what runs a project, else where to get it', () => {
 		const primary = () => document.querySelector('a.btn-primary');
 		card(bySlug('vibe-portredirect'));
