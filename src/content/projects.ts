@@ -892,9 +892,9 @@ export const projects: Project[] = [
 		],
 		hero: [
 			{
-				file: 'docs/screenshots/de-correction.png',
+				file: 'docs/screenshots/en-correction.png',
 				caption: {
-					en: 'A built-in preset for the AKG K240 Studio and the curve of its correction, in the German window',
+					en: 'A built-in preset for the AKG K240 Studio, and the curve of its correction',
 					de: 'Ein eingebautes Preset für den AKG K240 Studio und die Kurve seiner Korrektur'
 				},
 				focus: 'top'
@@ -902,10 +902,31 @@ export const projects: Project[] = [
 		],
 		gallery: [
 			{
-				file: 'docs/screenshots/de-curves.png',
+				file: 'docs/screenshots/en-curves.png',
 				caption: {
 					en: 'A correction designed from a measurement and a target, with tilt, bass and the limit for boosts',
 					de: 'Eine Korrektur aus Messung und Zielkurve, mit Neigung, Bass und Grenze für Anhebungen'
+				}
+			},
+			{
+				file: 'docs/screenshots/en-file.png',
+				caption: {
+					en: 'A preset from OPRA’s database, loaded from a file',
+					de: 'Ein Preset aus OPRAs Datenbank, aus einer Datei geladen'
+				}
+			},
+			{
+				file: 'docs/screenshots/en-hint.png',
+				caption: {
+					en: 'The hint of the crossfeed, with the pointer resting on it',
+					de: 'Der Hinweis zum Crossfeed, wenn der Zeiger darauf ruht'
+				}
+			},
+			{
+				file: 'docs/screenshots/en-built-in.png',
+				caption: {
+					en: 'Opened for the first time: the headphones with built-in presets, and what to do next',
+					de: 'Zum ersten Mal geöffnet: die Kopfhörer mit eingebauten Presets und was als Nächstes zu tun ist'
 				}
 			}
 		]
