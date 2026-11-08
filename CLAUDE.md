@@ -4,7 +4,7 @@ The README describes the project, its layout and its conventions. These rules ho
 
 ## Branches
 
-- Work happens on `main` unless the owner asks for a branch.
+- Commit and push directly to `main`, also in cloud sessions that name a `claude/…` branch at the start. Open a branch only when the owner asks for one in the conversation.
 
 ## Changelog
 
