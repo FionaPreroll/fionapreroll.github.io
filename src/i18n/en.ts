@@ -19,7 +19,7 @@ export const en = {
 	'theme.light': 'light',
 	'theme.dark': 'dark',
 
-	'hero.hello': 'Hi, I’m Fiona.',
+	'hero.hello': 'Hi, I’m Fiona (she/her).',
 	'hero.title': 'Engineering experiments, shipped with care.',
 	'hero.intro':
 		'I build software end to end: 3D games in the browser, phones that play together without a server, music and video tools that never upload a file, and network tools in Rust. Every project here comes with tests, CI, documentation and an interface in English and German.',

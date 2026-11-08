@@ -20,7 +20,7 @@ export const de: Record<MessageKey, string> = {
 	'theme.light': 'hell',
 	'theme.dark': 'dunkel',
 
-	'hero.hello': 'Hallo, ich bin Fiona.',
+	'hero.hello': 'Hallo, ich bin Fiona (sie/ihr).',
 	'hero.title': 'Engineering-Experimente, mit Sorgfalt ausgeliefert.',
 	'hero.intro':
 		'Ich baue Software von Anfang bis Ende: 3D-Spiele im Browser, Handys, die ohne Server zusammen spielen, Musik- und Videotools, die nie eine Datei hochladen, und Netzwerk-Tools in Rust. Jedes Projekt hier hat Tests, CI, Dokumentation und eine Oberfläche auf Deutsch und Englisch.',

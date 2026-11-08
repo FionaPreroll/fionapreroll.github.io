@@ -14,3 +14,4 @@ What changes for visitors of the page, newest first, in the format of [Keep a Ch
 - Light and dark colors, following the system or chosen in the header.
 - A page for addresses that do not exist.
 - A compact dashboard, linked quietly from the footer: every project's deployment, repository, CI and coverage at a glance, with its Actions, issues, pull requests and downloads.
+- My pronouns, she/her, in the greeting at the top of the page.
