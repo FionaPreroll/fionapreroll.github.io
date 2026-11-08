@@ -850,6 +850,10 @@ export const projects: Project[] = [
 				de: 'Umgeht sich selbst, wenn die DAW offline exportiert, damit die Korrektur im Abhörweg bleibt.'
 			},
 			{
+				en: 'Linear phase on request: the correction keeps transients in shape, and AudioRef tells the DAW its 43 to 46 ms of latency, so the tracks stay in time.',
+				de: 'Linearphasig auf Wunsch: Die Korrektur lässt Transienten in Form, und AudioRef meldet der DAW seine 43 bis 46 ms Latenz, damit die Spuren im Takt bleiben.'
+			},
+			{
 				en: 'Crossfeed in three strengths, mono and swapped channels, to hear a mix a little more as from speakers and to check it in mono.',
 				de: 'Crossfeed in drei Stärken, Mono und vertauschte Kanäle, um einen Mix etwas mehr wie über Lautsprecher zu hören und ihn in Mono zu prüfen.'
 			},
@@ -858,8 +862,8 @@ export const projects: Project[] = [
 				de: 'Das Projekt speichert die Korrektur, sodass es auch auf einem Rechner ohne die Dateien gleich klingt; jede Änderung blendet über 20 ms, damit nichts knackt.'
 			},
 			{
-				en: 'A window with the curve of the correction, hints on every control, and the author of each preset, in English and German.',
-				de: 'Ein Fenster mit der Kurve der Korrektur, Hinweisen an jedem Regler und dem Autor jedes Presets, auf Englisch und Deutsch.'
+				en: 'A window with the frequency response of the correction, a level meter, hints on every control, and the author of each preset, in English and German.',
+				de: 'Ein Fenster mit dem Frequenzgang der Korrektur, einer Pegelanzeige, Hinweisen an jedem Regler und dem Autor jedes Presets, auf Englisch und Deutsch.'
 			}
 		],
 		engineering: [
@@ -872,8 +876,8 @@ export const projects: Project[] = [
 				de: 'Der Audio-Thread allokiert nie, sperrt nie und liest keine Dateien: Filter entstehen im Hintergrund und kommen über lock-freie Queues herüber, die alten gehen zum Freigeben zurück.'
 			},
 			{
-				en: 'Matched biquads that hold up to the highest frequencies at every sample rate, and minimum-phase FIR filters from the real cepstrum, convolved in partitions without latency.',
-				de: 'Gematchte Biquads, die bei jeder Samplerate bis in die höchsten Frequenzen stimmen, und minimalphasige FIR-Filter aus dem reellen Cepstrum, partitioniert und ohne Latenz gefaltet.'
+				en: 'Matched biquads that hold up to the highest frequencies at every sample rate, minimum-phase FIR filters from the real cepstrum, convolved in partitions without latency, and linear-phase ones whose latency the DAW makes up for.',
+				de: 'Gematchte Biquads, die bei jeder Samplerate bis in die höchsten Frequenzen stimmen, minimalphasige FIR-Filter aus dem reellen Cepstrum, partitioniert und ohne Latenz gefaltet, und linearphasige, deren Latenz die DAW ausgleicht.'
 			},
 			{
 				en: 'Bundles for Windows, macOS and Linux, checked with clap-validator and pluginval at strictness 10; weekly fuzzing of every file it reads, cargo-deny, CodeQL and zizmor in CI, and screenshots of the window taken on a virtual display.',
@@ -894,8 +898,8 @@ export const projects: Project[] = [
 			{
 				file: 'docs/screenshots/en-correction.png',
 				caption: {
-					en: 'A built-in preset for the AKG K240 Studio, and the curve of its correction',
-					de: 'Ein eingebautes Preset für den AKG K240 Studio und die Kurve seiner Korrektur'
+					en: 'A built-in preset for the AKG K240 Studio, and the frequency response of its correction',
+					de: 'Ein eingebautes Preset für den AKG K240 Studio und der Frequenzgang seiner Korrektur'
 				},
 				focus: 'top'
 			}
@@ -904,8 +908,8 @@ export const projects: Project[] = [
 			{
 				file: 'docs/screenshots/en-curves.png',
 				caption: {
-					en: 'A correction designed from a measurement and a target, with tilt, bass and the limit for boosts',
-					de: 'Eine Korrektur aus Messung und Zielkurve, mit Neigung, Bass und Grenze für Anhebungen'
+					en: 'A correction designed from a measurement and a target, with tilt, bass and the limit for boosts, in linear phase with 43 ms of latency',
+					de: 'Eine Korrektur aus Messung und Zielkurve, mit Neigung, Bass und Grenze für Anhebungen, linearphasig mit 43 ms Latenz'
 				}
 			},
 			{

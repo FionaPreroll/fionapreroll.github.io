@@ -2,7 +2,7 @@
 	"audioref/docs/screenshots/en-built-in.png": {
 		"path": "/shots/audioref/en-built-in",
 		"width": 760,
-		"height": 680,
+		"height": 720,
 		"widths": [
 			640,
 			760
@@ -11,7 +11,7 @@
 	"audioref/docs/screenshots/en-correction.png": {
 		"path": "/shots/audioref/en-correction",
 		"width": 760,
-		"height": 680,
+		"height": 720,
 		"widths": [
 			640,
 			760
@@ -20,7 +20,7 @@
 	"audioref/docs/screenshots/en-curves.png": {
 		"path": "/shots/audioref/en-curves",
 		"width": 760,
-		"height": 680,
+		"height": 720,
 		"widths": [
 			640,
 			760
@@ -29,7 +29,7 @@
 	"audioref/docs/screenshots/en-file.png": {
 		"path": "/shots/audioref/en-file",
 		"width": 760,
-		"height": 680,
+		"height": 720,
 		"widths": [
 			640,
 			760
@@ -38,7 +38,7 @@
 	"audioref/docs/screenshots/en-hint.png": {
 		"path": "/shots/audioref/en-hint",
 		"width": 760,
-		"height": 680,
+		"height": 720,
 		"widths": [
 			640,
 			760
