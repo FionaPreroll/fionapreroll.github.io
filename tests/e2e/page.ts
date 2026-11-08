@@ -28,3 +28,17 @@ export async function hydrated(page: Page, ready = 'dialog'): Promise<void> {
 	await page.waitForFunction((selector) => document.querySelector(selector) !== null, ready);
 	await page.waitForLoadState('networkidle');
 }
+
+const badge =
+	'<svg xmlns="http://www.w3.org/2000/svg" width="80" height="20"><rect width="80" height="20" fill="#888"/></svg>';
+
+/**
+ * Answers every request to another host with a plain badge, so that a slow GitHub or Codecov
+ * cannot hold up `networkidle`.
+ */
+export async function stayLocal(page: Page): Promise<void> {
+	await page.route(
+		(url) => url.hostname !== 'localhost',
+		(route) => route.fulfill({ contentType: 'image/svg+xml', body: badge })
+	);
+}

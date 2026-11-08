@@ -1,6 +1,8 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
-import { hydrated } from './page.ts';
+import { hydrated, stayLocal } from './page.ts';
+
+test.beforeEach(({ page }) => stayLocal(page));
 
 test('the footer’s small link leads to the dashboard, which search engines skip', async ({
 	page
