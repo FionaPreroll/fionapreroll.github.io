@@ -6,7 +6,7 @@ What changes for visitors of the page, newest first, in the format of [Keep a Ch
 
 ### Added
 
-- The homepage, in English and German: ten projects in four groups, each with a screenshot, why it was made, what it does, its stack and where it runs, with more screenshots, details and links to fold out.
+- The homepage, in English and German: eleven projects in four groups, each with a screenshot, why it was made, what it does, its stack and where it runs, with more screenshots, details and links to fold out.
 - A lightbox for the screenshots, with arrow keys and swiping.
 - How I build: six habits that run through the projects.
 - The technologies of all projects, to filter the projects by.

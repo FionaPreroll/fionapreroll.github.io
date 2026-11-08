@@ -144,7 +144,7 @@ describe('TechOverview', () => {
 		const playwright = screen.getByRole('button', { name: /^Playwright\b/ });
 		expect(playwright).toHaveClass('text-base');
 		expect(screen.getByRole('button', { name: /^Svelte\b/ })).toHaveClass('text-sm');
-		expect(screen.getByRole('button', { name: /^Rust\b/ })).toHaveClass('text-xs');
+		expect(screen.getByRole('button', { name: /^egui\b/ })).toHaveClass('text-xs');
 		await fireEvent.click(playwright);
 		expect(onpick).toHaveBeenLastCalledWith('Playwright');
 		await rerender({ selected: 'Playwright', onpick });

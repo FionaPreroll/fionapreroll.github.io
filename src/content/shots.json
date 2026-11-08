@@ -1,4 +1,22 @@
 {
+	"audioref/docs/screenshots/de-correction.png": {
+		"path": "/shots/audioref/de-correction",
+		"width": 760,
+		"height": 680,
+		"widths": [
+			640,
+			760
+		]
+	},
+	"audioref/docs/screenshots/de-curves.png": {
+		"path": "/shots/audioref/de-curves",
+		"width": 760,
+		"height": 680,
+		"widths": [
+			640,
+			760
+		]
+	},
 	"vibe-laser/docs/screenshots/color-blind.png": {
 		"path": "/shots/vibe-laser/color-blind",
 		"width": 1440,

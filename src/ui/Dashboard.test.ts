@@ -7,15 +7,15 @@ const row = (slug: string) =>
 	within(document.querySelector(`[data-repo="${slug}"]`) as HTMLElement);
 
 describe('Dashboard', () => {
-	it('lists the eleven repositories in five groups', () => {
+	it('lists the twelve repositories in five groups', () => {
 		render(Dashboard, { lang: 'en' });
 		expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Dashboard');
-		expect(screen.getByText('Mission control · 11 repositories')).toBeInTheDocument();
-		expect(document.querySelectorAll('[data-repo]')).toHaveLength(11);
+		expect(screen.getByText('Mission control · 12 repositories')).toBeInTheDocument();
+		expect(document.querySelectorAll('[data-repo]')).toHaveLength(12);
 		expect(screen.getAllByRole('heading', { level: 2 }).map((h) => h.textContent?.trim())).toEqual([
 			'Games 03',
 			'Networking & peer to peer 03',
-			'Music & audio 03',
+			'Music & audio 04',
 			'Everyday 01',
 			'This site 01'
 		]);
@@ -112,7 +112,7 @@ describe('Dashboard', () => {
 
 	it('speaks German', () => {
 		render(Dashboard, { lang: 'de' });
-		expect(screen.getByText('Kommandozentrale · 11 Repositories')).toBeInTheDocument();
+		expect(screen.getByText('Kommandozentrale · 12 Repositories')).toBeInTheDocument();
 		expect(screen.getByRole('heading', { level: 2, name: /^Diese Seite/ })).toBeInTheDocument();
 		expect(row('vibe-laser').getByRole('link', { name: /^Vibe Laser öffnen/ })).toBeInTheDocument();
 		expect(screen.getByRole('link', { name: 'Zurück zur Startseite' })).toHaveAttribute(

@@ -3,7 +3,7 @@
 [![CI](https://github.com/FionaPreroll/fionapreroll.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/FionaPreroll/fionapreroll.github.io/actions/workflows/ci.yml)
 [![Coverage](https://codecov.io/gh/FionaPreroll/fionapreroll.github.io/branch/main/graph/badge.svg)](https://codecov.io/gh/FionaPreroll/fionapreroll.github.io)
 
-Fiona's homepage: a portfolio of recent projects, to link from a profile or a CV. Ten projects in four groups, each with a screenshot, why it was made, what it does, its stack and where it runs; their details fold out with more screenshots, how they are built and tested, and links to their READMEs, docs, releases and packages. In English and German, light and dark, and printable as a PDF.
+Fiona's homepage: a portfolio of recent projects, to link from a profile or a CV. Eleven projects in four groups, each with a screenshot, why it was made, what it does, its stack and where it runs; their details fold out with more screenshots, how they are built and tested, and links to their READMEs, docs, releases and packages. In English and German, light and dark, and printable as a PDF.
 
 **Live:** [fionapreroll.github.io](https://fionapreroll.github.io), in German at [fionapreroll.github.io/de/](https://fionapreroll.github.io/de/).
 
@@ -83,7 +83,7 @@ Everything about the projects lives in `src/content/projects.ts`, in the order o
 - **The numbers** ("Gadget No. 01") follow the order on the page and stay the same while the projects are filtered.
 - **Practices** (`practices.ts`) are the six tiles of "How I build"; `seenIn` names the projects they link to. **The profile** (`profile.ts`) holds the name, the contact address, the GitHub account and whether the hero says "Open to new opportunities".
 
-`src/content/content.test.ts` checks that the ten repositories are there, each text in both languages, every link on https and every screenshot fetched.
+`src/content/content.test.ts` checks that the eleven repositories are there, each text in both languages, every link on https and every screenshot fetched.
 
 ## Languages
 

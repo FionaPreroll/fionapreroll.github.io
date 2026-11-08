@@ -12,7 +12,8 @@ export type GroupId = 'games' | 'networking' | 'audio' | 'everyday';
 export const GROUPS: readonly GroupId[] = ['games', 'networking', 'audio', 'everyday'];
 
 /** Where a project runs. */
-export type Platform = 'web' | 'pwa' | 'android' | 'linux' | 'docker' | 'server';
+export type Platform =
+	'web' | 'pwa' | 'android' | 'windows' | 'macos' | 'linux' | 'docker' | 'server';
 
 /** What a link leads to: it picks the link's icon and, without a label of its own, its text. */
 export type LinkKind =

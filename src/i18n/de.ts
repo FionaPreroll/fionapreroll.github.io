@@ -23,7 +23,7 @@ export const de: Record<MessageKey, string> = {
 	'hero.hello': 'Hallo, ich bin Fiona (sie/ihr).',
 	'hero.title': 'Engineering-Experimente, mit Sorgfalt ausgeliefert.',
 	'hero.intro':
-		'Ich baue Software von Anfang bis Ende: 3D-Spiele im Browser, Handys, die ohne Server zusammen spielen, Musik- und Videotools, die nie eine Datei hochladen, und Netzwerk-Tools in Rust. Jedes Projekt hier hat Tests, CI, Dokumentation und eine Oberfläche auf Deutsch und Englisch.',
+		'Ich baue Software von Anfang bis Ende: 3D-Spiele im Browser, Handys, die ohne Server zusammen spielen, Musik- und Videotools, die nie eine Datei hochladen, und Netzwerk-Tools und ein Audio-Plugin in Rust. Jedes Projekt hier hat Tests, CI, Dokumentation und eine Oberfläche auf Deutsch und Englisch.',
 	'hero.open': 'Offen für neue Möglichkeiten',
 	'hero.cta.projects': 'Zu den Projekten',
 	'hero.cta.contact': 'Kontakt aufnehmen',
@@ -33,13 +33,13 @@ export const de: Record<MessageKey, string> = {
 	'hero.fact.code': 'Meist geschrieben in',
 	'hero.fact.code.value': 'TypeScript · Svelte · Rust',
 	'hero.fact.platforms': 'Läuft auf',
-	'hero.fact.platforms.value': 'Web · Android · Linux',
+	'hero.fact.platforms.value': 'Web · Android · Windows · macOS · Linux',
 	'hero.fact.i18n': 'Oberflächen auf',
 	'hero.fact.i18n.value': 'Deutsch · English',
 
 	'projects.title': 'Projekte',
 	'projects.intro':
-		'Zehn aktuelle Projekte aus meinem GitHub, nach Thema. Jedes läuft, ist Open Source und dokumentiert: In den Details gibt es mehr Screenshots, wie es gebaut ist, und Links zu Doku, Releases und Paketen.',
+		'Elf aktuelle Projekte aus meinem GitHub, nach Thema. Jedes läuft, ist Open Source und dokumentiert: In den Details gibt es mehr Screenshots, wie es gebaut ist, und Links zu Doku, Releases und Paketen.',
 	'projects.gadget': 'Gadget Nr. {n}',
 	'projects.since': 'seit {date}',
 	'projects.why': 'Warum',
@@ -64,7 +64,7 @@ export const de: Record<MessageKey, string> = {
 	'group.networking.intro':
 		'Geräte, die direkt miteinander sprechen, und ein Tunnel für Server hinter einem Router.',
 	'group.audio.title': 'Musik & Audio',
-	'group.audio.intro': 'Musik machen, spielen, zeigen und in Erinnerung behalten.',
+	'group.audio.intro': 'Musik machen, spielen, hören, zeigen und in Erinnerung behalten.',
 	'group.everyday.title': 'Alltag',
 	'group.everyday.intro': 'Kleine Werkzeuge, die einfach funktionieren.',
 
@@ -82,6 +82,8 @@ export const de: Record<MessageKey, string> = {
 	'platform.web': 'Browser',
 	'platform.pwa': 'Offline & installierbar',
 	'platform.android': 'Android',
+	'platform.windows': 'Windows',
+	'platform.macos': 'macOS',
 	'platform.linux': 'Linux',
 	'platform.docker': 'Docker',
 	'platform.server': 'Selbst gehostet',

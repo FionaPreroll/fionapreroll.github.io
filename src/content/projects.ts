@@ -823,6 +823,94 @@ export const projects: Project[] = [
 
 	// ── Music & audio ───────────────────────────────────────────────────────────────────────
 	{
+		slug: 'audioref',
+		name: 'AudioRef',
+		group: 'audio',
+		started: '2026-11',
+		ci: { workflow: 'release.yml', coverage: true },
+		tagline: {
+			en: 'A VST3 and CLAP plugin that evens out your headphones, so that budget and consumer models sound closer to neutral studio monitoring.',
+			de: 'Ein VST3- und CLAP-Plugin, das Kopfhörer glättet, damit günstige und Consumer-Modelle näher an neutrales Studio-Monitoring kommen.'
+		},
+		motivation: {
+			en: 'Mixing on a Bose QC25 or a Sony WH-1000XM4 means mixing against their bass and treble. Measurements and correction curves for them exist; AudioRef puts them where the mix happens, as the last plugin on the master, with no latency, no clipping and no way for the correction to slip into an export.',
+			de: 'Wer auf einem Bose QC25 oder einem Sony WH-1000XM4 mischt, mischt gegen deren Bässe und Höhen. Messungen und Korrekturkurven dafür gibt es; AudioRef bringt sie dorthin, wo gemischt wird, als letztes Plugin auf dem Master, ohne Latenz, ohne Clipping und ohne dass die Korrektur in einen Export rutscht.'
+		},
+		summary: {
+			en: 'Pick your headphones and an EQ preset from OPRA, built in for the Bose QC25, the Sony WH-1000XM4 and the AKG K240 Studio, or loaded from OPRA’s database for thousands of others. Or load a measurement and a target curve in AutoEQ’s format, and AudioRef designs the correction itself, to be adjusted with tilt, bass and a limit for boosts.',
+			de: 'Man wählt seine Kopfhörer und ein EQ-Preset aus OPRA, eingebaut für Bose QC25, Sony WH-1000XM4 und AKG K240 Studio oder für Tausende weitere aus OPRAs Datenbank geladen. Oder man lädt eine Messung und eine Zielkurve im Format von AutoEQ, und AudioRef berechnet die Korrektur selbst, einstellbar mit Neigung, Bass und einer Grenze für Anhebungen.'
+		},
+		features: [
+			{
+				en: 'Automatic headroom: when a correction boosts some frequencies, AudioRef lowers its level by as much, so nothing gets louder, and a limiter without latency keeps the output below −0.3 dBFS.',
+				de: 'Automatischer Headroom: Hebt eine Korrektur Frequenzen an, senkt AudioRef den Pegel um genauso viel, damit nichts lauter wird, und ein Limiter ohne Latenz hält den Ausgang unter −0,3 dBFS.'
+			},
+			{
+				en: 'Bypasses itself when the DAW exports offline, so the correction stays in the monitoring path.',
+				de: 'Umgeht sich selbst, wenn die DAW offline exportiert, damit die Korrektur im Abhörweg bleibt.'
+			},
+			{
+				en: 'Crossfeed in three strengths, mono and swapped channels, to hear a mix a little more as from speakers and to check it in mono.',
+				de: 'Crossfeed in drei Stärken, Mono und vertauschte Kanäle, um einen Mix etwas mehr wie über Lautsprecher zu hören und ihn in Mono zu prüfen.'
+			},
+			{
+				en: 'The project saves the correction, so it opens the same on a computer without the files; every change fades over 20 ms, so nothing clicks.',
+				de: 'Das Projekt speichert die Korrektur, sodass es auch auf einem Rechner ohne die Dateien gleich klingt; jede Änderung blendet über 20 ms, damit nichts knackt.'
+			},
+			{
+				en: 'A window with the curve of the correction, hints on every control, and the author of each preset, in English and German.',
+				de: 'Ein Fenster mit der Kurve der Korrektur, Hinweisen an jedem Regler und dem Autor jedes Presets, auf Englisch und Deutsch.'
+			}
+		],
+		engineering: [
+			{
+				en: 'Rust with nih-plug and egui; the signal processing is a crate of its own without plugin APIs, tested to 100 % of its lines and functions.',
+				de: 'Rust mit nih-plug und egui; die Signalverarbeitung ist eine eigene Crate ohne Plugin-APIs, getestet zu 100 % ihrer Zeilen und Funktionen.'
+			},
+			{
+				en: 'The audio thread never allocates, locks or reads files: filters are designed in the background and handed over through lock-free queues, and the old ones go back to be freed.',
+				de: 'Der Audio-Thread allokiert nie, sperrt nie und liest keine Dateien: Filter entstehen im Hintergrund und kommen über lock-freie Queues herüber, die alten gehen zum Freigeben zurück.'
+			},
+			{
+				en: 'Matched biquads that hold up to the highest frequencies at every sample rate, and minimum-phase FIR filters from the real cepstrum, convolved in partitions without latency.',
+				de: 'Gematchte Biquads, die bei jeder Samplerate bis in die höchsten Frequenzen stimmen, und minimalphasige FIR-Filter aus dem reellen Cepstrum, partitioniert und ohne Latenz gefaltet.'
+			},
+			{
+				en: 'Bundles for Windows, macOS and Linux, checked with clap-validator and pluginval at strictness 10; weekly fuzzing of every file it reads, cargo-deny, CodeQL and zizmor in CI, and screenshots of the window taken on a virtual display.',
+				de: 'Bundles für Windows, macOS und Linux, geprüft mit clap-validator und pluginval auf Strenge 10; wöchentliches Fuzzing jeder Datei, die es liest, cargo-deny, CodeQL und zizmor in der CI, und Screenshots des Fensters auf einem virtuellen Display.'
+			}
+		],
+		stack: ['Rust', 'nih-plug', 'egui', 'VST3', 'CLAP', 'realfft'],
+		platforms: ['windows', 'macos', 'linux'],
+		links: [
+			releases('audioref'),
+			readme('audioref'),
+			doc('audioref', 'docs/ARCHITECTURE.md', 'Architecture', 'Architektur'),
+			doc('audioref', 'docs/PLAN.md', 'Plan', 'Plan'),
+			doc('audioref', 'docs/DEVELOPMENT.md', 'Development', 'Entwicklung'),
+			changelog('audioref')
+		],
+		hero: [
+			{
+				file: 'docs/screenshots/de-correction.png',
+				caption: {
+					en: 'A built-in preset for the AKG K240 Studio and the curve of its correction, in the German window',
+					de: 'Ein eingebautes Preset für den AKG K240 Studio und die Kurve seiner Korrektur'
+				},
+				focus: 'top'
+			}
+		],
+		gallery: [
+			{
+				file: 'docs/screenshots/de-curves.png',
+				caption: {
+					en: 'A correction designed from a measurement and a target, with tilt, bass and the limit for boosts',
+					de: 'Eine Korrektur aus Messung und Zielkurve, mit Neigung, Bass und Grenze für Anhebungen'
+				}
+			}
+		]
+	},
+	{
 		slug: 'vibe-soundlab',
 		name: 'Vibe Soundlab',
 		group: 'audio',

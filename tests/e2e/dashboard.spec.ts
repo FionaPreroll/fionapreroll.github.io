@@ -13,7 +13,7 @@ test('the footer’s small link leads to the dashboard, which search engines ski
 	await expect(page).toHaveURL(/\/en\/dashboard\/$/);
 	await expect(page.getByRole('heading', { level: 1, name: 'Dashboard' })).toBeVisible();
 	await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex, nofollow');
-	await expect(page.locator('[data-repo]')).toHaveCount(11);
+	await expect(page.locator('[data-repo]')).toHaveCount(12);
 });
 
 test('the dashboard keeps its page when the language changes', async ({ page }) => {
@@ -21,7 +21,7 @@ test('the dashboard keeps its page when the language changes', async ({ page }) 
 	await page.waitForLoadState('networkidle');
 	await page.getByRole('link', { name: 'Auf Deutsch lesen' }).click();
 	await expect(page).toHaveURL(/\/de\/dashboard\/$/);
-	await expect(page.getByText('Kommandozentrale · 11 Repositories')).toBeVisible();
+	await expect(page.getByText('Kommandozentrale · 12 Repositories')).toBeVisible();
 	await page.getByRole('link', { name: 'Zurück zur Startseite' }).click();
 	await expect(page).toHaveURL(/\/de\/$/);
 });

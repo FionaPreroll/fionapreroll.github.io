@@ -12,6 +12,6 @@ describe('the dashboard page', () => {
 
 	it('shows the dashboard in its language', () => {
 		render(Page, { data: { lang: 'de' } } as never);
-		expect(screen.getByText('Kommandozentrale · 11 Repositories')).toBeInTheDocument();
+		expect(screen.getByText('Kommandozentrale · 12 Repositories')).toBeInTheDocument();
 	});
 });

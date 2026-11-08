@@ -42,6 +42,8 @@
 		web: 'globe-alt',
 		pwa: 'arrow-down-on-square',
 		android: 'device-phone-mobile',
+		windows: 'computer-desktop',
+		macos: 'computer-desktop',
 		linux: 'command-line',
 		docker: 'cube-transparent',
 		server: 'server-stack'

@@ -1,13 +1,13 @@
 import { expect, test } from '@playwright/test';
 import { hydrated, loadAllImages, watchErrors } from './page.ts';
 
-test('the English page shows ten projects without errors', async ({ page }) => {
+test('the English page shows eleven projects without errors', async ({ page }) => {
 	const errors = watchErrors(page);
 	await page.goto('/en/');
 	await hydrated(page);
 	await expect(page).toHaveTitle(/Engineering experiments, shipped with care/);
 	await expect(page.locator('html')).toHaveAttribute('lang', 'en');
-	await expect(page.getByRole('article')).toHaveCount(10);
+	await expect(page.getByRole('article')).toHaveCount(11);
 	await expect(page.getByRole('heading', { level: 1 })).toHaveText(
 		'Engineering experiments, shipped with care.'
 	);

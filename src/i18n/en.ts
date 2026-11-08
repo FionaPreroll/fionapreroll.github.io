@@ -22,7 +22,7 @@ export const en = {
 	'hero.hello': 'Hi, I’m Fiona (she/her).',
 	'hero.title': 'Engineering experiments, shipped with care.',
 	'hero.intro':
-		'I build software end to end: 3D games in the browser, phones that play together without a server, music and video tools that never upload a file, and network tools in Rust. Every project here comes with tests, CI, documentation and an interface in English and German.',
+		'I build software end to end: 3D games in the browser, phones that play together without a server, music and video tools that never upload a file, and network tools and an audio plugin in Rust. Every project here comes with tests, CI, documentation and an interface in English and German.',
 	'hero.open': 'Open to new opportunities',
 	'hero.cta.projects': 'See the projects',
 	'hero.cta.contact': 'Get in touch',
@@ -32,13 +32,13 @@ export const en = {
 	'hero.fact.code': 'Mostly written in',
 	'hero.fact.code.value': 'TypeScript · Svelte · Rust',
 	'hero.fact.platforms': 'Runs on',
-	'hero.fact.platforms.value': 'Web · Android · Linux',
+	'hero.fact.platforms.value': 'Web · Android · Windows · macOS · Linux',
 	'hero.fact.i18n': 'Interfaces in',
 	'hero.fact.i18n.value': 'English · Deutsch',
 
 	'projects.title': 'Projects',
 	'projects.intro':
-		'Ten recent projects from my GitHub, by topic. Each one runs, is open source and documented: open the details for more screenshots, how it is built, and links to its docs, releases and packages.',
+		'Eleven recent projects from my GitHub, by topic. Each one runs, is open source and documented: open the details for more screenshots, how it is built, and links to its docs, releases and packages.',
 	'projects.gadget': 'Gadget No. {n}',
 	'projects.since': 'since {date}',
 	'projects.why': 'Why',
@@ -63,7 +63,7 @@ export const en = {
 	'group.networking.intro':
 		'Devices that talk to each other directly, and a tunnel for servers behind a router.',
 	'group.audio.title': 'Music & audio',
-	'group.audio.intro': 'Making, playing, showing and remembering music.',
+	'group.audio.intro': 'Making, playing, hearing, showing and remembering music.',
 	'group.everyday.title': 'Everyday',
 	'group.everyday.intro': 'Small tools that simply work.',
 
@@ -81,6 +81,8 @@ export const en = {
 	'platform.web': 'Browser',
 	'platform.pwa': 'Offline & installable',
 	'platform.android': 'Android',
+	'platform.windows': 'Windows',
+	'platform.macos': 'macOS',
 	'platform.linux': 'Linux',
 	'platform.docker': 'Docker',
 	'platform.server': 'Self-hosted',
