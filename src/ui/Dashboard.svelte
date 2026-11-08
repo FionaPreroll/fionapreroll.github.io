@@ -92,18 +92,19 @@
 						{ href: repo.pulls, icon: 'arrows-right-left', label: t('dashboard.pulls', { name: repo.name }) }
 					]}
 					<li
-						class="grid gap-x-6 gap-y-2 py-3 lg:grid-cols-[minmax(0,1fr)_13rem_21.5rem] lg:items-center"
+						class="grid gap-x-6 gap-y-2 py-3 lg:grid-cols-[minmax(0,1fr)_auto_21.5rem] lg:items-center"
 						data-repo={repo.slug}
 					>
 						<p class="min-w-0 truncate">
 							<span class="font-medium">{repo.name}</span>
 							<span class="ml-2 font-mono text-xs text-muted">{repo.slug}</span>
 						</p>
-						<p class="flex items-center gap-2">
+						<!-- The badges keep their width: the column grows with them, and they wrap on small screens. -->
+						<p class="flex flex-wrap items-center gap-2 lg:justify-end">
 							<ExternalLink
 								href={repo.ci.page}
 								label={t('dashboard.ci', { name: repo.name })}
-								class="inline-flex"
+								class="inline-flex shrink-0"
 							>
 								<img src={repo.ci.badge} alt="" height="20" class="h-5 w-auto" loading="lazy" />
 							</ExternalLink>
@@ -111,7 +112,7 @@
 								<ExternalLink
 									href={repo.coverage.page}
 									label={t('dashboard.coverage', { name: repo.name })}
-									class="inline-flex"
+									class="inline-flex shrink-0"
 								>
 									<img
 										src={repo.coverage.badge}
