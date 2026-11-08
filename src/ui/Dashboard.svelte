@@ -99,7 +99,11 @@
 							<span class="font-medium">{repo.name}</span>
 							<span class="ml-2 font-mono text-xs text-muted">{repo.slug}</span>
 						</p>
-						<!-- The badges keep their width: the column grows with them, and they wrap on small screens. -->
+						<!--
+							The badges keep their width: the column grows with them, and they wrap on small screens.
+							Coverage gets a slot as wide as Codecov's widest badge, so that the gap between the
+							badges lines up from row to row, whatever the percentage.
+						-->
 						<p class="flex flex-wrap items-center gap-2 lg:justify-end">
 							<ExternalLink
 								href={repo.ci.page}
@@ -108,23 +112,25 @@
 							>
 								<img src={repo.ci.badge} alt="" height="20" class="h-5 w-auto" loading="lazy" />
 							</ExternalLink>
-							{#if repo.coverage}
-								<ExternalLink
-									href={repo.coverage.page}
-									label={t('dashboard.coverage', { name: repo.name })}
-									class="inline-flex shrink-0"
-								>
-									<img
-										src={repo.coverage.badge}
-										alt=""
-										height="20"
-										class="h-5 w-auto"
-										loading="lazy"
-									/>
-								</ExternalLink>
-							{:else}
-								<span class="font-mono text-xs text-muted">{t('dashboard.nocoverage')}</span>
-							{/if}
+							<span class="flex min-w-32 shrink-0">
+								{#if repo.coverage}
+									<ExternalLink
+										href={repo.coverage.page}
+										label={t('dashboard.coverage', { name: repo.name })}
+										class="inline-flex shrink-0"
+									>
+										<img
+											src={repo.coverage.badge}
+											alt=""
+											height="20"
+											class="h-5 w-auto"
+											loading="lazy"
+										/>
+									</ExternalLink>
+								{:else}
+									<span class="font-mono text-xs text-muted">{t('dashboard.nocoverage')}</span>
+								{/if}
+							</span>
 						</p>
 						<ul class="-ml-2 flex flex-wrap items-center">
 							{#if !repo.live}
