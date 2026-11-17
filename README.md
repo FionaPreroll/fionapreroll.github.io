@@ -3,7 +3,7 @@
 [![CI](https://github.com/FionaPreroll/fionapreroll.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/FionaPreroll/fionapreroll.github.io/actions/workflows/ci.yml)
 [![Coverage](https://codecov.io/gh/FionaPreroll/fionapreroll.github.io/branch/main/graph/badge.svg)](https://codecov.io/gh/FionaPreroll/fionapreroll.github.io)
 
-Fiona's homepage: a portfolio of recent projects, to link from a profile or a CV. Eleven projects in four groups, each with a screenshot, why it was made, what it does, its stack and where it runs; their details fold out with more screenshots, how they are built and tested, and links to their READMEs, docs, releases and packages. In English and German, light and dark, and printable as a PDF.
+Fiona's homepage: a portfolio of recent projects, to link from a profile or a CV. Twelve projects in five groups, each with a screenshot, why it was made, what it does, its stack and where it runs; their details fold out with more screenshots, how they are built and tested, and links to their READMEs, docs, releases and packages. In English and German, light and dark, and printable as a PDF.
 
 **Live:** [fionapreroll.github.io](https://fionapreroll.github.io), in German at [fionapreroll.github.io/de/](https://fionapreroll.github.io/de/).
 
@@ -83,7 +83,7 @@ Everything about the projects lives in `src/content/projects.ts`, in the order o
 - **The numbers** ("Gadget No. 01") follow the order on the page and stay the same while the projects are filtered.
 - **Practices** (`practices.ts`) are the six tiles of "How I build"; `seenIn` names the projects they link to. **The profile** (`profile.ts`) holds the name, the contact address, the GitHub account and whether the hero says "Open to new opportunities".
 
-`src/content/content.test.ts` checks that the eleven repositories are there, each text in both languages, every link on https and every screenshot fetched.
+`src/content/content.test.ts` checks that the twelve repositories are there, each text in both languages, every link on https and every screenshot fetched.
 
 ## Languages
 
@@ -110,7 +110,7 @@ A lab notebook, quietly: graph paper behind the hero and the contact section, li
 
 ## Screenshots of the projects
 
-`pnpm shots` (`tools/shots.ts`) reads every screenshot path in `projects.ts`, fetches the file from the repository's `main` branch, writes it as WebP 640 and 1440 pixels wide (never wider than the original) into `static/shots/<repository>/`, and lists each with its size in `src/content/shots.json`, which the page reads for `srcset`, `width` and `height`. SVGs are copied as they are, and refused if they hold scripts or event handlers. It also fetches the GitHub avatar, and removes pictures no project names any more. `SHOTS_FROM=<folder>` reads the repositories from clones in that folder instead.
+`pnpm shots` (`tools/shots.ts`) reads every screenshot in `projects.ts`, fetches the file from the repository's `main` branch, or from the project's own GitHub Pages site when it is named by its address there (for projects whose CI publishes its pictures instead of committing them, such as rueder), writes it as WebP 640 and 1440 pixels wide (never wider than the original) into `static/shots/<repository>/`, and lists each with its size in `src/content/shots.json`, which the page reads for `srcset`, `width` and `height`. SVGs are copied as they are, and refused if they hold scripts or event handlers. It also fetches the GitHub avatar, and removes pictures no project names any more. `SHOTS_FROM=<folder>` reads the repositories from clones in that folder instead; pictures named by their address still come from the site.
 
 The Project screenshots workflow (`.github/workflows/shots.yml`) runs it every Monday and by hand, and opens a pull request when a picture changed.
 

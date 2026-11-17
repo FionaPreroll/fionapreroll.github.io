@@ -23,7 +23,7 @@ export const de: Record<MessageKey, string> = {
 	'hero.hello': 'Hallo, ich bin Fiona (sie/ihr).',
 	'hero.title': 'Engineering-Experimente, mit Sorgfalt ausgeliefert.',
 	'hero.intro':
-		'Ich baue Software von Anfang bis Ende: 3D-Spiele im Browser, Handys, die ohne Server zusammen spielen, Musik- und Videotools, die nie eine Datei hochladen, und Netzwerk-Tools und ein Audio-Plugin in Rust. Jedes Projekt hier hat Tests, CI, Dokumentation und eine Oberfläche auf Deutsch und Englisch.',
+		'Ich baue Software von Anfang bis Ende: einen selbst gehosteten Feedreader, 3D-Spiele im Browser, Handys, die ohne Server zusammen spielen, Musik- und Videotools, die nie eine Datei hochladen, und Netzwerk-Tools und ein Audio-Plugin in Rust. Jedes Projekt hier hat Tests, CI, Dokumentation und eine Oberfläche auf Deutsch und Englisch.',
 	'hero.open': 'Offen für neue Möglichkeiten',
 	'hero.cta.projects': 'Zu den Projekten',
 	'hero.cta.contact': 'Kontakt aufnehmen',
@@ -39,7 +39,7 @@ export const de: Record<MessageKey, string> = {
 
 	'projects.title': 'Projekte',
 	'projects.intro':
-		'Elf aktuelle Projekte aus meinem GitHub, nach Thema. Jedes läuft, ist Open Source und dokumentiert: In den Details gibt es mehr Screenshots, wie es gebaut ist, und Links zu Doku, Releases und Paketen.',
+		'Zwölf aktuelle Projekte aus meinem GitHub, nach Thema. Jedes läuft, ist Open Source und dokumentiert: In den Details gibt es mehr Screenshots, wie es gebaut ist, und Links zu Doku, Releases und Paketen.',
 	'projects.gadget': 'Gadget Nr. {n}',
 	'projects.since': 'seit {date}',
 	'projects.why': 'Warum',
@@ -58,6 +58,8 @@ export const de: Record<MessageKey, string> = {
 	'projects.filter.clear': 'Alle Projekte zeigen',
 	'projects.filter.by': 'Die Projekte mit {tech} zeigen',
 
+	'group.selfhosted.title': 'Selbst gehostet',
+	'group.selfhosted.intro': 'Ein Feedreader für eine Handvoll Leute, auf dem eigenen Server.',
 	'group.games.title': 'Spiele',
 	'group.games.intro': 'Rätsel und ein 3D-Spiel, alle für den Browser gemacht.',
 	'group.networking.title': 'Netzwerk & Peer-to-Peer',

@@ -16,6 +16,23 @@ export function rawUrl(owner: string, slug: string, file: string): string {
 	return `https://raw.githubusercontent.com/${owner}/${slug}/main/${file}`;
 }
 
+/**
+ * Where a screenshot comes from: a path in the repository, on its main branch, or an address on the
+ * project's own GitHub Pages site, for pictures its CI publishes there instead of committing them.
+ * Addresses anywhere else are refused.
+ */
+export function sourceUrl(owner: string, slug: string, file: string): string {
+	if (!isAddress(file)) return rawUrl(owner, slug, file);
+	const site = `https://${owner.toLowerCase()}.github.io/${slug}/`;
+	if (!file.startsWith(site)) throw new Error(`${file}: screenshots by address come from ${site}`);
+	return file;
+}
+
+/** Whether a screenshot is named by its address rather than by its path in the repository. */
+export function isAddress(file: string): boolean {
+	return file.startsWith('https://');
+}
+
 /** The file name without its folders and extension: docs/screenshots/ride.png gives ride. */
 export function baseName(file: string): string {
 	const name = file.split('/').pop() ?? file;

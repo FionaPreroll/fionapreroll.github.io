@@ -34,6 +34,161 @@ function apk(slug: string, file: string): ProjectLink {
 }
 
 export const projects: Project[] = [
+	// ── Self-hosted ─────────────────────────────────────────────────────────────────────────
+	{
+		slug: 'rueder',
+		name: 'rueder',
+		group: 'selfhosted',
+		started: '2022-05',
+		ci: { workflow: 'ci.yml', coverage: true },
+		tagline: {
+			en: 'A self-hosted feed reader for a handful of people, in the spirit of Google Reader: one Rust server next to PostgreSQL, a web page and an Android app.',
+			de: 'Ein selbst gehosteter Feedreader für eine Handvoll Leute, im Geist von Google Reader: ein Rust-Server neben PostgreSQL, eine Webseite und eine Android-App.'
+		},
+		motivation: {
+			en: 'My feed reader used to be five Go services with a separate frontend, a login service and an image proxy. I rewrote it as one Rust program, with unread counts that are always right, and with the privacy, security and tests it always deserved; it replaced the old one in November 2026 and brings its data over.',
+			de: 'Mein Feedreader bestand aus fünf Go-Diensten mit eigenem Frontend, einem Login-Dienst und einem Bild-Proxy. Ich habe ihn als ein einziges Rust-Programm neu geschrieben, mit Ungelesen-Zahlen, die immer stimmen, und mit dem Datenschutz, der Sicherheit und den Tests, die er immer verdient hat; im November 2026 hat er den alten abgelöst und übernimmt dessen Daten.'
+		},
+		summary: {
+			en: 'RSS, Atom and JSON Feed in folders, read as a dense list, three panes or a magazine, with keyboard shortcuts, live updates to every open tab, filters, stars, labels and search. The server cleans every article of ads and trackers and serves its images through its own proxy, so the browser talks to nothing but rueder.',
+			de: 'RSS, Atom und JSON Feed in Ordnern, gelesen als dichte Liste, in drei Spalten oder als Magazin, mit Tastenkürzeln, Live-Updates in jedem offenen Tab, Filtern, Sternen, Labels und Suche. Der Server befreit jeden Artikel von Werbung und Trackern und liefert seine Bilder über einen eigenen Proxy, sodass der Browser mit nichts als rueder spricht.'
+		},
+		features: [
+			{
+				en: 'Four views of a list, dark mode, a layout for phones, and settings for theme, accent color, density, font and sorting.',
+				de: 'Vier Ansichten einer Liste, dunkler Modus, ein Layout fürs Handy und Einstellungen für Farbschema, Akzentfarbe, Dichte, Schrift und Sortierung.'
+			},
+			{
+				en: 'Folders up to five levels deep, rearranged by drag and drop or keyboard; finding the feed on a web page; OPML import and export.',
+				de: 'Ordner bis zu fünf Ebenen tief, per Drag-and-drop oder Tastatur umsortiert; den Feed einer Webseite finden; OPML-Import und -Export.'
+			},
+			{
+				en: 'When a feed changes an article, rueder keeps up to 20 versions and shows what changed, without making it unread again.',
+				de: 'Ändert ein Feed einen Artikel, behält rueder bis zu 20 Versionen und zeigt, was sich geändert hat, ohne ihn wieder ungelesen zu machen.'
+			},
+			{
+				en: 'Apps such as NetNewsWire and Read You connect through the Google Reader API, each with an app password of its own.',
+				de: 'Apps wie NetNewsWire und Read You verbinden sich über die Google-Reader-API, jede mit einem eigenen App-Passwort.'
+			},
+			{
+				en: 'Passwords with a second factor, passkeys or OpenID Connect, open or invitation-only registration, a status page for admins, and moving an account between installations as one file.',
+				de: 'Passwörter mit zweitem Faktor, Passkeys oder OpenID Connect, offene Registrierung oder nur mit Einladung, eine Statusseite für Admins und der Umzug eines Kontos zwischen Installationen als eine Datei.'
+			},
+			{
+				en: 'An Android app around the page, and a demo with made-up feeds that runs in the browser without a server.',
+				de: 'Eine Android-App um die Seite herum und eine Demo mit erfundenen Feeds, die ohne Server im Browser läuft.'
+			}
+		],
+		engineering: [
+			{
+				en: 'Rust with axum, tokio and sqlx, queries checked against the schema at compile time; unread counts are always worked out from each account’s read mark, never kept as a counter.',
+				de: 'Rust mit axum, tokio und sqlx, Abfragen zur Compile-Zeit gegen das Schema geprüft; Ungelesen-Zahlen werden immer aus dem Lesestand jedes Kontos berechnet, nie als Zähler geführt.'
+			},
+			{
+				en: 'Measured with 10 million made-up articles: every list, count and mark stays under 50 ms, also in the 99th percentile and right after a restart.',
+				de: 'Gemessen mit 10 Millionen erfundenen Artikeln: Jede Liste, jede Zahl und jede Markierung bleibt unter 50 ms, auch im 99. Perzentil und direkt nach einem Neustart.'
+			},
+			{
+				en: 'One hardened HTTP client for everything that reaches out, against SSRF; a strict Content-Security-Policy; every endpoint tested to show nothing to another account.',
+				de: 'Ein gehärteter HTTP-Client für alles, was nach außen geht, gegen SSRF; eine strenge Content-Security-Policy; für jeden Endpunkt ein Test, dass ein anderes Konto nichts davon sieht.'
+			},
+			{
+				en: 'The API described in OpenAPI and its TypeScript types generated from the server; Playwright tests against the real server, fuzzing of cleaning, feeds, image proxy and the Google Reader API, a soak test, CodeQL and gitleaks.',
+				de: 'Die API in OpenAPI beschrieben und ihre TypeScript-Typen aus dem Server erzeugt; Playwright-Tests gegen den echten Server, Fuzzing von Bereinigung, Feeds, Bild-Proxy und Google-Reader-API, ein Soak-Test, CodeQL und gitleaks.'
+			},
+			{
+				en: 'CI publishes a container image for amd64 and arm64, the Android app, the documentation and the demo, and takes the screenshots anew for every change.',
+				de: 'Die CI veröffentlicht ein Container-Image für amd64 und arm64, die Android-App, die Dokumentation und die Demo und macht die Screenshots bei jeder Änderung neu.'
+			}
+		],
+		stack: [
+			'Rust',
+			'axum',
+			'sqlx',
+			'PostgreSQL',
+			'SvelteKit',
+			'Svelte',
+			'Tailwind CSS',
+			'TypeScript',
+			'Capacitor',
+			'Docker',
+			'Playwright'
+		],
+		platforms: ['server', 'docker', 'web', 'pwa', 'android'],
+		links: [
+			{
+				kind: 'live',
+				href: 'https://fionapreroll.github.io/rueder/demo/',
+				label: { en: 'Try the demo', de: 'Demo ausprobieren' }
+			},
+			{ kind: 'apk', href: `${repo('rueder')}/releases/download/android-latest/rueder.apk` },
+			{ kind: 'docker', href: `${repo('rueder')}/pkgs/container/rueder` },
+			{
+				kind: 'docs',
+				href: 'https://fionapreroll.github.io/rueder/',
+				label: { en: 'Documentation', de: 'Dokumentation' }
+			},
+			readme('rueder'),
+			doc('rueder', 'deploy/README.md', 'Installing', 'Installation'),
+			doc('rueder', 'docs/architecture.md', 'Architecture (German)', 'Architektur')
+		],
+		hero: [
+			{
+				file: 'https://fionapreroll.github.io/rueder/screenshots/three-panes-light.png',
+				caption: {
+					en: 'Three panes: folders and feeds with their unread counts, the list of all items, and an opened article',
+					de: 'Drei Spalten: Ordner und Feeds mit ihren Ungelesen-Zahlen, die Liste aller Artikel und ein geöffneter Artikel'
+				}
+			}
+		],
+		gallery: [
+			{
+				file: 'https://fionapreroll.github.io/rueder/screenshots/magazine-light.png',
+				caption: {
+					en: 'The magazine view, one of four views of a list',
+					de: 'Die Magazinansicht, eine von vier Ansichten einer Liste'
+				}
+			},
+			{
+				file: 'https://fionapreroll.github.io/rueder/screenshots/three-panes-dark.png',
+				caption: { en: 'The three panes in dark colors', de: 'Die drei Spalten in dunklen Farben' }
+			},
+			{
+				file: 'https://fionapreroll.github.io/rueder/screenshots/versions-light.png',
+				caption: {
+					en: 'An article that changed at its source, compared with what it was',
+					de: 'Ein Artikel, der sich an der Quelle geändert hat, verglichen mit dem, was er war'
+				}
+			},
+			{
+				file: 'https://fionapreroll.github.io/rueder/screenshots/filter-rules-light.png',
+				caption: {
+					en: 'A filter rule says what it would catch before it is saved',
+					de: 'Eine Filterregel sagt, was sie treffen würde, bevor sie gespeichert wird'
+				}
+			},
+			{
+				file: 'https://fionapreroll.github.io/rueder/screenshots/apps-light.png',
+				caption: {
+					en: 'Setting up NetNewsWire: what to enter, and an app password of its own',
+					de: 'NetNewsWire einrichten: was einzutragen ist, und ein eigenes App-Passwort'
+				}
+			},
+			{
+				file: 'https://fionapreroll.github.io/rueder/screenshots/phone-home-light.png',
+				caption: { en: 'The start page on a phone', de: 'Die Startseite auf dem Handy' }
+			},
+			{
+				file: 'https://fionapreroll.github.io/rueder/screenshots/phone-sidebar-light.png',
+				caption: { en: 'Folders and labels on a phone', de: 'Ordner und Labels auf dem Handy' }
+			},
+			{
+				file: 'https://fionapreroll.github.io/rueder/screenshots/phone-article-light.png',
+				caption: { en: 'An article on a phone', de: 'Ein Artikel auf dem Handy' }
+			}
+		]
+	},
+
 	// ── Games ────────────────────────────────────────────────────────────────────────────────
 	{
 		slug: 'vibe-wormholesurfing',

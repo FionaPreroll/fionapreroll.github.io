@@ -2,8 +2,10 @@ import { describe, expect, it } from 'vitest';
 import {
 	baseName,
 	isSafeSvg,
+	isAddress,
 	isSvg,
 	rawUrl,
+	sourceUrl,
 	sortedManifest,
 	svgSize,
 	widthsFor
@@ -26,10 +28,25 @@ describe('file names', () => {
 		);
 	});
 
+	it('fetches a path from main, and an address only from the project’s own site', () => {
+		expect(sourceUrl('FionaPreroll', 'vibe-laser', 'docs/screenshots/solved.png')).toBe(
+			rawUrl('FionaPreroll', 'vibe-laser', 'docs/screenshots/solved.png')
+		);
+		const site = 'https://fionapreroll.github.io/rueder/screenshots/magazine-light.png';
+		expect(isAddress(site)).toBe(true);
+		expect(isAddress('docs/screenshots/solved.png')).toBe(false);
+		expect(sourceUrl('FionaPreroll', 'rueder', site)).toBe(site);
+		expect(() => sourceUrl('FionaPreroll', 'vibe-laser', site)).toThrow(/vibe-laser/);
+		expect(() => sourceUrl('FionaPreroll', 'rueder', 'https://example.com/rueder/x.png')).toThrow();
+	});
+
 	it('takes the name without folders and extension', () => {
 		expect(baseName('docs/screenshots/ride.png')).toBe('ride');
 		expect(baseName('logo.v2.jpg')).toBe('logo.v2');
 		expect(baseName('README')).toBe('README');
+		expect(baseName('https://fionapreroll.github.io/rueder/screenshots/apps-light.png')).toBe(
+			'apps-light'
+		);
 	});
 
 	it('knows an SVG', () => {

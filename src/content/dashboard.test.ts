@@ -8,6 +8,7 @@ const repo = (slug: string) => repos.find((r) => r.slug === slug)!;
 describe('the dashboard', () => {
 	it('lists every project in the homepage’s groups and order, then this site', () => {
 		expect(dashboard.map((group) => group.id)).toEqual([
+			'selfhosted',
 			'games',
 			'networking',
 			'audio',

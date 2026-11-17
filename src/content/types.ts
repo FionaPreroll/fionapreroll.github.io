@@ -7,9 +7,15 @@ export const LANGS: readonly Lang[] = ['en', 'de'];
 export type Localized = Record<Lang, string>;
 
 /** The topics the projects are grouped by, in the order the page shows them. */
-export type GroupId = 'games' | 'networking' | 'audio' | 'everyday';
+export type GroupId = 'selfhosted' | 'games' | 'networking' | 'audio' | 'everyday';
 
-export const GROUPS: readonly GroupId[] = ['games', 'networking', 'audio', 'everyday'];
+export const GROUPS: readonly GroupId[] = [
+	'selfhosted',
+	'games',
+	'networking',
+	'audio',
+	'everyday'
+];
 
 /** Where a project runs. */
 export type Platform =
@@ -26,8 +32,12 @@ export interface ProjectLink {
 	label?: Localized;
 }
 
-/** A screenshot, by its path in the project's repository (see tools/shots.ts). */
+/** A screenshot (see tools/shots.ts). */
 export interface Shot {
+	/**
+	 * Its path in the project's repository, or its address on the project's GitHub Pages site, for
+	 * pictures that CI publishes there instead of committing them.
+	 */
 	file: string;
 	caption: Localized;
 	/** The part that stays in view when the picture is cropped to the hero frame. */

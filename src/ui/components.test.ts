@@ -23,7 +23,7 @@ afterEach(() => {
 
 const bySlug = (slug: string) => projects.find((p) => p.slug === slug) ?? projects[0]!;
 
-function card(project = projects[0]!, extra: Record<string, unknown> = {}) {
+function card(project = bySlug('vibe-wormholesurfing'), extra: Record<string, unknown> = {}) {
 	const handlers = { ontoggle: vi.fn(), onpicktech: vi.fn(), onopen: vi.fn() };
 	renderIn(ProjectCard, { project, number: 3, ...handlers, ...extra });
 	return handlers;
@@ -78,7 +78,7 @@ describe('ProjectCard', () => {
 		await fireEvent.click(screen.getByRole('button', { name: /Show details/ }));
 		expect(ontoggle).toHaveBeenCalledWith(true);
 		document.body.innerHTML = '';
-		const again = card(projects[0], { expanded: true });
+		const again = card(undefined, { expanded: true });
 		await fireEvent.click(screen.getByRole('button', { name: /Hide details/ }));
 		expect(again.ontoggle).toHaveBeenCalledWith(false);
 	});

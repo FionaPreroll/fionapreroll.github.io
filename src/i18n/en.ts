@@ -22,7 +22,7 @@ export const en = {
 	'hero.hello': 'Hi, I’m Fiona (she/her).',
 	'hero.title': 'Engineering experiments, shipped with care.',
 	'hero.intro':
-		'I build software end to end: 3D games in the browser, phones that play together without a server, music and video tools that never upload a file, and network tools and an audio plugin in Rust. Every project here comes with tests, CI, documentation and an interface in English and German.',
+		'I build software end to end: a self-hosted feed reader, 3D games in the browser, phones that play together without a server, music and video tools that never upload a file, and network tools and an audio plugin in Rust. Every project here comes with tests, CI, documentation and an interface in English and German.',
 	'hero.open': 'Open to new opportunities',
 	'hero.cta.projects': 'See the projects',
 	'hero.cta.contact': 'Get in touch',
@@ -38,7 +38,7 @@ export const en = {
 
 	'projects.title': 'Projects',
 	'projects.intro':
-		'Eleven recent projects from my GitHub, by topic. Each one runs, is open source and documented: open the details for more screenshots, how it is built, and links to its docs, releases and packages.',
+		'Twelve recent projects from my GitHub, by topic. Each one runs, is open source and documented: open the details for more screenshots, how it is built, and links to its docs, releases and packages.',
 	'projects.gadget': 'Gadget No. {n}',
 	'projects.since': 'since {date}',
 	'projects.why': 'Why',
@@ -57,6 +57,8 @@ export const en = {
 	'projects.filter.clear': 'Show all projects',
 	'projects.filter.by': 'Show the projects with {tech}',
 
+	'group.selfhosted.title': 'Self-hosted',
+	'group.selfhosted.intro': 'A feed reader for a handful of people, on a server of your own.',
 	'group.games.title': 'Games',
 	'group.games.intro': 'Puzzles and a 3D game, all made for the browser.',
 	'group.networking.title': 'Networking & peer to peer',

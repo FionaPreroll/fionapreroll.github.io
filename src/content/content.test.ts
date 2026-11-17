@@ -8,6 +8,7 @@ import { GROUPS, type Localized } from './types.ts';
 
 /** The repositories the page shows, as asked for. */
 const SHOWCASED = [
+	'rueder',
 	'vibe-wormholesurfing',
 	'vibe-mugames',
 	'vibe-portredirect',
@@ -34,7 +35,7 @@ function texts(project: (typeof projects)[number]): Localized[] {
 }
 
 describe('the projects', () => {
-	it('are the eleven showcased repositories, each once', () => {
+	it('are the twelve showcased repositories, each once', () => {
 		expect(projects.map((p) => p.slug).sort()).toEqual([...SHOWCASED].sort());
 	});
 

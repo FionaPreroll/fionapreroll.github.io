@@ -44,6 +44,87 @@
 			760
 		]
 	},
+	"rueder/https://fionapreroll.github.io/rueder/screenshots/apps-light.png": {
+		"path": "/shots/rueder/apps-light",
+		"width": 1632,
+		"height": 1330,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"rueder/https://fionapreroll.github.io/rueder/screenshots/filter-rules-light.png": {
+		"path": "/shots/rueder/filter-rules-light",
+		"width": 1632,
+		"height": 1466,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"rueder/https://fionapreroll.github.io/rueder/screenshots/magazine-light.png": {
+		"path": "/shots/rueder/magazine-light",
+		"width": 2560,
+		"height": 1600,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"rueder/https://fionapreroll.github.io/rueder/screenshots/phone-article-light.png": {
+		"path": "/shots/rueder/phone-article-light",
+		"width": 1082,
+		"height": 2202,
+		"widths": [
+			640,
+			1082
+		]
+	},
+	"rueder/https://fionapreroll.github.io/rueder/screenshots/phone-home-light.png": {
+		"path": "/shots/rueder/phone-home-light",
+		"width": 1082,
+		"height": 2202,
+		"widths": [
+			640,
+			1082
+		]
+	},
+	"rueder/https://fionapreroll.github.io/rueder/screenshots/phone-sidebar-light.png": {
+		"path": "/shots/rueder/phone-sidebar-light",
+		"width": 1082,
+		"height": 2202,
+		"widths": [
+			640,
+			1082
+		]
+	},
+	"rueder/https://fionapreroll.github.io/rueder/screenshots/three-panes-dark.png": {
+		"path": "/shots/rueder/three-panes-dark",
+		"width": 2560,
+		"height": 1600,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"rueder/https://fionapreroll.github.io/rueder/screenshots/three-panes-light.png": {
+		"path": "/shots/rueder/three-panes-light",
+		"width": 2560,
+		"height": 1600,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"rueder/https://fionapreroll.github.io/rueder/screenshots/versions-light.png": {
+		"path": "/shots/rueder/versions-light",
+		"width": 1632,
+		"height": 1196,
+		"widths": [
+			640,
+			1440
+		]
+	},
 	"vibe-laser/docs/screenshots/color-blind.png": {
 		"path": "/shots/vibe-laser/color-blind",
 		"width": 1440,

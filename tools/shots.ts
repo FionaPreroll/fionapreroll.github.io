@@ -4,7 +4,8 @@
 // Files in static/shots/ that no project names any more are removed.
 //
 // SHOTS_FROM=<folder> reads the repositories from clones in that folder instead of GitHub, e.g.
-// SHOTS_FROM=~/code reads ~/code/vibe-laser/docs/screenshots/solved.png.
+// SHOTS_FROM=~/code reads ~/code/vibe-laser/docs/screenshots/solved.png. Screenshots named by their
+// address on a project's GitHub Pages site always come from there.
 
 import { mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
@@ -14,8 +15,9 @@ import { projects } from '../src/content/projects.ts';
 import {
 	baseName,
 	isSafeSvg,
+	isAddress,
 	isSvg,
-	rawUrl,
+	sourceUrl,
 	type ShotEntry,
 	sortedManifest,
 	svgSize,
@@ -29,8 +31,8 @@ const from = process.env.SHOTS_FROM;
 const QUALITY = 82;
 
 async function fetchFile(slug: string, file: string): Promise<Buffer> {
-	if (from) return readFile(path.join(from, slug, file));
-	const url = rawUrl(profile.login, slug, file);
+	if (from && !isAddress(file)) return readFile(path.join(from, slug, file));
+	const url = sourceUrl(profile.login, slug, file);
 	const response = await fetch(url);
 	if (!response.ok) throw new Error(`${url}: ${response.status} ${response.statusText}`);
 	return Buffer.from(await response.arrayBuffer());
