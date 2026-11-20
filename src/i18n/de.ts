@@ -59,7 +59,8 @@ export const de: Record<MessageKey, string> = {
 	'projects.filter.by': 'Die Projekte mit {tech} zeigen',
 
 	'group.selfhosted.title': 'Selbst gehostet',
-	'group.selfhosted.intro': 'Ein Feedreader für eine Handvoll Leute, auf dem eigenen Server.',
+	'group.selfhosted.intro':
+		'Ein Feedreader auf dem eigenen Server, für eine Handvoll Leute oder für 100.000.',
 	'group.games.title': 'Spiele',
 	'group.games.intro': 'Rätsel und ein 3D-Spiel, alle für den Browser gemacht.',
 	'group.networking.title': 'Netzwerk & Peer-to-Peer',

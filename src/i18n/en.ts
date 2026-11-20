@@ -58,7 +58,8 @@ export const en = {
 	'projects.filter.by': 'Show the projects with {tech}',
 
 	'group.selfhosted.title': 'Self-hosted',
-	'group.selfhosted.intro': 'A feed reader for a handful of people, on a server of your own.',
+	'group.selfhosted.intro':
+		'A feed reader on a server of your own, for a handful of people or for 100,000.',
 	'group.games.title': 'Games',
 	'group.games.intro': 'Puzzles and a 3D game, all made for the browser.',
 	'group.networking.title': 'Networking & peer to peer',

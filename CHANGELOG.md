@@ -15,3 +15,7 @@ What changes for visitors of the page, newest first, in the format of [Keep a Ch
 - A page for addresses that do not exist.
 - A compact dashboard, linked quietly from the footer: every project's deployment, repository, CI and coverage at a glance, with its Actions, issues, pull requests and downloads.
 - My pronouns, she/her, in the greeting at the top of the page.
+
+### Changed
+
+- rueder now says that it speaks 16 languages and is thought through for up to 100,000 accounts on one machine, with what was measured for it.

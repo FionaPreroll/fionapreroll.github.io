@@ -42,8 +42,8 @@ export const projects: Project[] = [
 		started: '2022-05',
 		ci: { workflow: 'ci.yml', coverage: true },
 		tagline: {
-			en: 'A self-hosted feed reader for a handful of people, in the spirit of Google Reader: one Rust server next to PostgreSQL, a web page and an Android app.',
-			de: 'Ein selbst gehosteter Feedreader für eine Handvoll Leute, im Geist von Google Reader: ein Rust-Server neben PostgreSQL, eine Webseite und eine Android-App.'
+			en: 'A self-hosted feed reader in the spirit of Google Reader, for a handful of people or for 100,000: one Rust server next to PostgreSQL, a web page and an Android app.',
+			de: 'Ein selbst gehosteter Feedreader im Geist von Google Reader, für eine Handvoll Leute oder für 100.000: ein Rust-Server neben PostgreSQL, eine Webseite und eine Android-App.'
 		},
 		motivation: {
 			en: 'My feed reader used to be five Go services with a separate frontend, a login service and an image proxy. I rewrote it as one Rust program, with unread counts that are always right, and with the privacy, security and tests it always deserved; it replaced the old one in November 2026 and brings its data over.',
@@ -57,6 +57,10 @@ export const projects: Project[] = [
 			{
 				en: 'Four views of a list, dark mode, a layout for phones, and settings for theme, accent color, density, font and sorting.',
 				de: 'Vier Ansichten einer Liste, dunkler Modus, ein Layout fürs Handy und Einstellungen für Farbschema, Akzentfarbe, Dichte, Schrift und Sortierung.'
+			},
+			{
+				en: 'The page, the Android app and the mails in 16 languages, among them Japanese, Chinese in both scripts and Arabic, for which the page mirrors from right to left; numbers and dates follow the browser’s locale.',
+				de: 'Die Seite, die Android-App und die Mails in 16 Sprachen, darunter Japanisch, Chinesisch in beiden Schriften und Arabisch, für das sich die Seite von rechts nach links spiegelt; Zahlen und Daten folgen dem Gebietsschema des Browsers.'
 			},
 			{
 				en: 'Folders up to five levels deep, rearranged by drag and drop or keyboard; finding the feed on a web page; OPML import and export.',
@@ -87,6 +91,10 @@ export const projects: Project[] = [
 			{
 				en: 'Measured with 10 million made-up articles: every list, count and mark stays under 50 ms, also in the 99th percentile and right after a restart.',
 				de: 'Gemessen mit 10 Millionen erfundenen Artikeln: Jede Liste, jede Zahl und jede Markierung bleibt unter 50 ms, auch im 99. Perzentil und direkt nach einem Neustart.'
+			},
+			{
+				en: 'Thought through for 100,000 accounts on one machine: with as many made-up readers, 4 cores answer about 250 visits a second, seven times their busiest moment; live updates reach each account on its own, a slow host holds up only its own feeds, and the image proxy serves 9,000 images a second without a shared cache.',
+				de: 'Durchdacht für 100.000 Konten auf einer Maschine: Mit ebenso vielen erfundenen Lesern beantworten 4 Kerne rund 250 Besuche je Sekunde, siebenmal so viel wie zu ihrer Spitzenzeit; Live-Updates erreichen jedes Konto für sich, ein langsamer Host hält nur seine eigenen Feeds auf, und der Bild-Proxy liefert 9.000 Bilder je Sekunde ohne geteilten Cache.'
 			},
 			{
 				en: 'One hardened HTTP client for everything that reaches out, against SSRF; a strict Content-Security-Policy; every endpoint tested to show nothing to another account.',
