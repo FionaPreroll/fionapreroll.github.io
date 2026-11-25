@@ -7,17 +7,17 @@ const row = (slug: string) =>
 	within(document.querySelector(`[data-repo="${slug}"]`) as HTMLElement);
 
 describe('Dashboard', () => {
-	it('lists the thirteen repositories in six groups', () => {
+	it('lists the fourteen repositories in six groups', () => {
 		render(Dashboard, { lang: 'en' });
 		expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Dashboard');
-		expect(screen.getByText('Mission control · 13 repositories')).toBeInTheDocument();
-		expect(document.querySelectorAll('[data-repo]')).toHaveLength(13);
+		expect(screen.getByText('Mission control · 14 repositories')).toBeInTheDocument();
+		expect(document.querySelectorAll('[data-repo]')).toHaveLength(14);
 		expect(screen.getAllByRole('heading', { level: 2 }).map((h) => h.textContent?.trim())).toEqual([
 			'Self-hosted 01',
 			'Games 03',
 			'Networking & peer to peer 03',
 			'Music & audio 04',
-			'Everyday 01',
+			'Everyday 02',
 			'This site 01'
 		]);
 	});
@@ -83,7 +83,8 @@ describe('Dashboard', () => {
 		expect(
 			document.querySelector('[data-repo="vibe-portredirect"] li[aria-hidden="true"]')
 		).not.toBeNull();
-		expect(screen.queryByText('no coverage')).not.toBeInTheDocument();
+		expect(row('retroizer').getByText('no coverage')).toBeInTheDocument();
+		expect(screen.getAllByText('no coverage')).toHaveLength(1);
 	});
 
 	it('says when a repository reports no coverage', () => {
@@ -113,7 +114,7 @@ describe('Dashboard', () => {
 
 	it('speaks German', () => {
 		render(Dashboard, { lang: 'de' });
-		expect(screen.getByText('Kommandozentrale · 13 Repositories')).toBeInTheDocument();
+		expect(screen.getByText('Kommandozentrale · 14 Repositories')).toBeInTheDocument();
 		expect(screen.getByRole('heading', { level: 2, name: /^Diese Seite/ })).toBeInTheDocument();
 		expect(row('vibe-laser').getByRole('link', { name: /^Vibe Laser öffnen/ })).toBeInTheDocument();
 		expect(screen.getByRole('link', { name: 'Zurück zur Startseite' })).toHaveAttribute(

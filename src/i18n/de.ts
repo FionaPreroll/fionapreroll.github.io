@@ -39,7 +39,7 @@ export const de: Record<MessageKey, string> = {
 
 	'projects.title': 'Projekte',
 	'projects.intro':
-		'Zwölf aktuelle Projekte aus meinem GitHub, nach Thema. Jedes läuft, ist Open Source und dokumentiert: In den Details gibt es mehr Screenshots, wie es gebaut ist, und Links zu Doku, Releases und Paketen.',
+		'Dreizehn aktuelle Projekte aus meinem GitHub, nach Thema. Jedes läuft, ist Open Source und dokumentiert: In den Details gibt es mehr Screenshots, wie es gebaut ist, und Links zu Doku, Releases und Paketen.',
 	'projects.gadget': 'Gadget Nr. {n}',
 	'projects.since': 'seit {date}',
 	'projects.why': 'Warum',

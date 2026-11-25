@@ -1528,6 +1528,111 @@ export const projects: Project[] = [
 
 	// ── Everyday ────────────────────────────────────────────────────────────────────────────
 	{
+		slug: 'retroizer',
+		name: 'Retroizer',
+		group: 'everyday',
+		started: '2026-11',
+		ci: { workflow: 'ci.yml', coverage: false },
+		tagline: {
+			en: 'Turns any picture into retro pixel art in the browser: a palette of 2 to 256 colors found by k-means, then pixels as big as you like.',
+			de: 'Macht im Browser aus jedem Bild Retro-Pixelart: eine Palette aus 2 bis 256 Farben, per k-Means gefunden, dann Pixel so groß, wie man will.'
+		},
+		motivation: {
+			en: 'Retroizer started as a single JavaScript file of mine, and a full HD picture kept it busy for almost a minute while the page froze. I brought it back as version 2, rewritten in TypeScript: about 150 times faster, with the tests it never had, and an interface like a piece of old hardware.',
+			de: 'Retroizer begann als eine einzige JavaScript-Datei von mir, und ein Full-HD-Bild beschäftigte ihn fast eine Minute lang, während die Seite einfror. Ich habe ihn als Version 2 zurückgeholt, neu geschrieben in TypeScript: rund 150-mal schneller, mit den Tests, die er nie hatte, und einer Oberfläche wie ein Stück alter Hardware.'
+		},
+		summary: {
+			en: 'Drop, load or paste a picture, choose the pixel size and the number of colors, and press Retroize: the picture shrinks to a palette of its own colors, then into blocks. Save it as a PNG or copy it, and take the palette along as hex codes or a GIMP palette; the picture never leaves the device.',
+			de: 'Ein Bild hineinziehen, laden oder einfügen, Pixelgröße und Farbanzahl wählen und Retroize drücken: Das Bild schrumpft auf eine Palette aus seinen eigenen Farben, dann zu Blöcken. Gespeichert wird es als PNG oder kopiert, die Palette kommt als Hex-Codes oder GIMP-Palette mit; das Bild verlässt nie das Gerät.'
+		},
+		features: [
+			{
+				en: 'Palettize and pixelize one after the other or both at once, with undo and redo, and a switch between the original and the result.',
+				de: 'Palettieren und Pixelieren nacheinander oder beides auf einmal, mit Rückgängig und Wiederholen und einem Umschalter zwischen Original und Ergebnis.'
+			},
+			{
+				en: 'The palette as a list of hex codes or as a GIMP palette (.gpl), which Aseprite, Inkscape and Krita read too.',
+				de: 'Die Palette als Liste von Hex-Codes oder als GIMP-Palette (.gpl), die auch Aseprite, Inkscape und Krita lesen.'
+			},
+			{
+				en: 'Three themes after old screens, Phosphor, Amber and Cyan, with scanlines to switch on, and a layout for phones with a floating preview.',
+				de: 'Drei Designs nach alten Bildschirmen, Phosphor, Amber und Cyan, mit zuschaltbaren Scanlines, und ein Layout fürs Handy mit schwebender Vorschau.'
+			},
+			{
+				en: 'An About dialog with the version, the commit and CI run it was built from, and every part from elsewhere with its license; the app loads nothing from third parties except a sample photo on request.',
+				de: 'Ein Info-Dialog mit Version, dem Commit und CI-Lauf, aus dem sie gebaut wurde, und jedem fremden Bestandteil mit seiner Lizenz; die App lädt nichts von Dritten außer auf Wunsch einem Beispielfoto.'
+			}
+		],
+		engineering: [
+			{
+				en: 'K-means on a histogram of 32,768 color bins instead of every pixel, seeded with k-means++, in a Web Worker, so the page never freezes; a full HD picture went from 55 s to 0.36 s.',
+				de: 'K-Means auf einem Histogramm aus 32.768 Farbfächern statt auf jedem Pixel, mit k-Means++ gestartet, in einem Web Worker, damit die Seite nie einfriert; ein Full-HD-Bild braucht statt 55 s nur noch 0,36 s.'
+			},
+			{
+				en: 'The algorithms live apart from the page, shared by the worker, a fallback on the main thread and the tests; strict TypeScript throughout.',
+				de: 'Die Algorithmen leben getrennt von der Seite, geteilt von Worker, einem Ausweichweg im Hauptthread und den Tests; durchgehend striktes TypeScript.'
+			},
+			{
+				en: 'Unit tests with Vitest, property-based fuzz tests with fast-check (100,000 runs per property every night), a soak test of up to 2,000 operations in Chromium, and a benchmark in every CI run.',
+				de: 'Unit-Tests mit Vitest, eigenschaftsbasierte Fuzz-Tests mit fast-check (jede Nacht 100.000 Läufe je Eigenschaft), ein Soak-Test mit bis zu 2.000 Operationen in Chromium und ein Benchmark in jedem CI-Lauf.'
+			},
+			{
+				en: 'CI takes the screenshots of every build of main and deploys them with the app to GitHub Pages, so they always show the current version.',
+				de: 'Die CI macht die Screenshots bei jedem Build von main und veröffentlicht sie mit der App auf GitHub Pages, damit sie immer die aktuelle Version zeigen.'
+			}
+		],
+		stack: ['TypeScript', 'Vite', 'Web Workers', 'Vitest', 'fast-check', 'Playwright'],
+		platforms: ['web'],
+		links: [
+			{ kind: 'live', href: 'https://fionapreroll.github.io/retroizer/' },
+			readme('retroizer')
+		],
+		hero: [
+			{
+				file: 'https://fionapreroll.github.io/retroizer/showcase/desktop-phosphor.png',
+				caption: {
+					en: 'A sunset in 16 colors and blocks of 4 pixels, in the Phosphor theme',
+					de: 'Ein Sonnenuntergang in 16 Farben und Blöcken aus 4 Pixeln, im Design Phosphor'
+				},
+				focus: 'top'
+			}
+		],
+		gallery: [
+			{
+				file: 'https://fionapreroll.github.io/retroizer/showcase/desktop-original.png',
+				caption: {
+					en: 'The same picture before, for comparison',
+					de: 'Dasselbe Bild vorher, zum Vergleich'
+				}
+			},
+			{
+				file: 'https://fionapreroll.github.io/retroizer/showcase/desktop-amber.png',
+				caption: {
+					en: '8 colors and blocks of 6 pixels, in the Amber theme',
+					de: '8 Farben und Blöcke aus 6 Pixeln, im Design Amber'
+				}
+			},
+			{
+				file: 'https://fionapreroll.github.io/retroizer/showcase/desktop-cyan.png',
+				caption: {
+					en: '32 colors and blocks of 3 pixels, in the Cyan theme',
+					de: '32 Farben und Blöcke aus 3 Pixeln, im Design Cyan'
+				}
+			},
+			{
+				file: 'https://fionapreroll.github.io/retroizer/showcase/phone.png',
+				caption: { en: 'On a phone', de: 'Auf dem Handy' }
+			},
+			{
+				file: 'https://fionapreroll.github.io/retroizer/showcase/about.png',
+				caption: {
+					en: 'The About dialog: version, build and the parts from elsewhere',
+					de: 'Der Info-Dialog: Version, Build und die fremden Bestandteile'
+				}
+			}
+		]
+	},
+	{
 		slug: 'vibe-stundenplan',
 		name: 'Vibe-Stundenplan',
 		group: 'everyday',

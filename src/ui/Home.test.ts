@@ -25,9 +25,9 @@ afterEach(() => {
 });
 
 describe('Home', () => {
-	it('shows the twelve projects, numbered, in their five groups', () => {
+	it('shows the thirteen projects, numbered, in their five groups', () => {
 		render(Home, { lang: 'en' });
-		expect(articles()).toHaveLength(12);
+		expect(articles()).toHaveLength(13);
 		expect(groups()).toEqual([
 			'Self-hosted',
 			'Games',
@@ -38,7 +38,7 @@ describe('Home', () => {
 		const first = within(articles()[0] as HTMLElement);
 		expect(first.getByRole('heading', { level: 4 })).toHaveTextContent('rueder');
 		expect(first.getByText('Gadget No. 01')).toBeInTheDocument();
-		expect(screen.getByText('Gadget No. 12')).toBeInTheDocument();
+		expect(screen.getByText('Gadget No. 13')).toBeInTheDocument();
 	});
 
 	it('speaks German at /de/, and follows when the language changes', async () => {
@@ -71,18 +71,18 @@ describe('Home', () => {
 		render(Home, { lang: 'en' });
 		await fireEvent.click(screen.getByRole('button', { name: /^Rust\b.*in 4 of the projects/ }));
 		expect(articles()).toHaveLength(4);
-		expect(screen.getByRole('status')).toHaveTextContent('4 of 12 projects use Rust.');
+		expect(screen.getByRole('status')).toHaveTextContent('4 of 13 projects use Rust.');
 		expect(groups()).toEqual(['Self-hosted', 'Networking & peer to peer', 'Music & audio']);
 		// The same technology again shows everything.
 		await fireEvent.click(screen.getByRole('button', { name: /^Rust\b.*in 4 of the projects/ }));
-		expect(articles()).toHaveLength(12);
+		expect(articles()).toHaveLength(13);
 
 		const card = within(articles()[1] as HTMLElement);
 		await fireEvent.click(card.getByRole('button', { name: 'Show the projects with three.js' }));
 		expect(articles()).toHaveLength(1);
 		// The card's chip of the technology that filters shows everything again.
 		await fireEvent.click(screen.getByRole('button', { name: 'Show the projects with three.js' }));
-		expect(articles()).toHaveLength(12);
+		expect(articles()).toHaveLength(13);
 		await fireEvent.click(card.getByRole('button', { name: 'Show the projects with three.js' }));
 		expect(
 			within(articles()[0] as HTMLElement).getByRole('button', {
@@ -90,7 +90,7 @@ describe('Home', () => {
 			})
 		).toHaveAttribute('aria-pressed', 'true');
 		await fireEvent.click(screen.getByRole('button', { name: 'Show all projects' }));
-		expect(articles()).toHaveLength(12);
+		expect(articles()).toHaveLength(13);
 		expect(screen.queryByRole('status')).not.toBeInTheDocument();
 	});
 
@@ -117,7 +117,7 @@ describe('Home', () => {
 		await fireEvent.click(screen.getByRole('button', { name: /^Rust\b/ }));
 		history.replaceState(null, '', '/#vibe-puzzles');
 		await fireEvent(window, new HashChangeEvent('hashchange'));
-		expect(articles()).toHaveLength(12);
+		expect(articles()).toHaveLength(13);
 		expect(document.getElementById('vibe-puzzles-details')?.inert).toBe(false);
 
 		// A link to a project that the filter shows leaves the filter.

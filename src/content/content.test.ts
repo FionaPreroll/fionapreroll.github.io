@@ -19,6 +19,7 @@ const SHOWCASED = [
 	'vibe-soundlab',
 	'vibe-musicbanana',
 	'vibe-visualizer',
+	'retroizer',
 	'vibe-stundenplan'
 ];
 
@@ -35,7 +36,7 @@ function texts(project: (typeof projects)[number]): Localized[] {
 }
 
 describe('the projects', () => {
-	it('are the twelve showcased repositories, each once', () => {
+	it('are the thirteen showcased repositories, each once', () => {
 		expect(projects.map((p) => p.slug).sort()).toEqual([...SHOWCASED].sort());
 	});
 

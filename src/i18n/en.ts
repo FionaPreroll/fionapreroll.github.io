@@ -38,7 +38,7 @@ export const en = {
 
 	'projects.title': 'Projects',
 	'projects.intro':
-		'Twelve recent projects from my GitHub, by topic. Each one runs, is open source and documented: open the details for more screenshots, how it is built, and links to its docs, releases and packages.',
+		'Thirteen recent projects from my GitHub, by topic. Each one runs, is open source and documented: open the details for more screenshots, how it is built, and links to its docs, releases and packages.',
 	'projects.gadget': 'Gadget No. {n}',
 	'projects.since': 'since {date}',
 	'projects.why': 'Why',

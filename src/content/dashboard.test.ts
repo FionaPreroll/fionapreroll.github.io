@@ -47,7 +47,7 @@ describe('the dashboard', () => {
 		expect(repo('vibe-stundenplan').coverage?.page).toBe(
 			'https://codecov.io/gh/FionaPreroll/vibe-stundenplan'
 		);
-		expect(repos.every((r) => r.coverage)).toBe(true);
+		expect(repos.filter((r) => !r.coverage).map((r) => r.slug)).toEqual(['retroizer']);
 		expect(repo('fionapreroll.github.io').live).toBe('https://fionapreroll.github.io/');
 	});
 

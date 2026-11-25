@@ -44,6 +44,60 @@
 			760
 		]
 	},
+	"retroizer/https://fionapreroll.github.io/retroizer/showcase/about.png": {
+		"path": "/shots/retroizer/about",
+		"width": 2880,
+		"height": 2000,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"retroizer/https://fionapreroll.github.io/retroizer/showcase/desktop-amber.png": {
+		"path": "/shots/retroizer/desktop-amber",
+		"width": 2880,
+		"height": 2000,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"retroizer/https://fionapreroll.github.io/retroizer/showcase/desktop-cyan.png": {
+		"path": "/shots/retroizer/desktop-cyan",
+		"width": 2880,
+		"height": 2000,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"retroizer/https://fionapreroll.github.io/retroizer/showcase/desktop-original.png": {
+		"path": "/shots/retroizer/desktop-original",
+		"width": 2880,
+		"height": 2000,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"retroizer/https://fionapreroll.github.io/retroizer/showcase/desktop-phosphor.png": {
+		"path": "/shots/retroizer/desktop-phosphor",
+		"width": 2880,
+		"height": 2000,
+		"widths": [
+			640,
+			1440
+		]
+	},
+	"retroizer/https://fionapreroll.github.io/retroizer/showcase/phone.png": {
+		"path": "/shots/retroizer/phone",
+		"width": 780,
+		"height": 1688,
+		"widths": [
+			640,
+			780
+		]
+	},
 	"rueder/https://fionapreroll.github.io/rueder/screenshots/apps-light.png": {
 		"path": "/shots/rueder/apps-light",
 		"width": 1632,

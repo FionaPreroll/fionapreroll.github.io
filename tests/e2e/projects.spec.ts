@@ -33,11 +33,11 @@ test('a technology filters the projects', async ({ page }) => {
 	await page.goto('/en/');
 	await hydrated(page);
 	await page.getByRole('button', { name: /^Rust\b.*in 4 of the projects/ }).click();
-	await expect(page.getByRole('status')).toHaveText(/4 of 12 projects use Rust\./);
+	await expect(page.getByRole('status')).toHaveText(/4 of 13 projects use Rust\./);
 	await expect(page.getByRole('article')).toHaveCount(4);
 	await expect(page.locator('#projects')).toBeInViewport();
 	await page.getByRole('button', { name: 'Show all projects' }).click();
-	await expect(page.getByRole('article')).toHaveCount(12);
+	await expect(page.getByRole('article')).toHaveCount(13);
 });
 
 test('the lightbox steps through the screenshots by key and closes with Escape', async ({
