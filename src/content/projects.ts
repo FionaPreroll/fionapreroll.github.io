@@ -1528,18 +1528,104 @@ export const projects: Project[] = [
 
 	// ── Everyday ────────────────────────────────────────────────────────────────────────────
 	{
+		slug: 'vibe-stundenplan',
+		name: 'Vibe-Stundenplan',
+		group: 'everyday',
+		started: '2026-09',
+		ci: { workflow: 'ci.yml', coverage: true },
+		tagline: {
+			en: 'A weekly timetable in the browser: no account, no backend, no build step.',
+			de: 'Ein Wochenstundenplan im Browser: kein Konto, kein Backend, kein Build-Schritt.'
+		},
+		motivation: {
+			en: 'A timetable for a university week that simply works: open it, fill it in, done. Everything stays in the browser, and the code stays small enough to read in an afternoon.',
+			de: 'Ein Stundenplan für die Uni-Woche, der einfach funktioniert: öffnen, ausfüllen, fertig. Alles bleibt im Browser, und der Code bleibt klein genug, um ihn an einem Nachmittag zu lesen.'
+		},
+		summary: {
+			en: 'A weekly grid with days to rename, add and remove, time grids from presets such as TU Dresden and RWTH Aachen or fully custom, entries by click or by dragging across slots, and several schedules side by side, exported as readable JSON.',
+			de: 'Ein Wochenraster mit Tagen zum Umbenennen, Hinzufügen und Entfernen, Zeitraster aus Vorlagen wie TU Dresden und RWTH Aachen oder ganz eigene, Einträge per Klick oder Ziehen über mehrere Slots und mehrere Pläne nebeneinander, exportiert als lesbares JSON.'
+		},
+		features: [
+			{
+				en: 'The current time slot and weekday light up as the day goes by.',
+				de: 'Der aktuelle Zeitslot und Wochentag leuchten im Lauf des Tages mit.'
+			},
+			{
+				en: 'Entries with their own start and end times, independent of the grid.',
+				de: 'Einträge mit eigener Start- und Endzeit, unabhängig vom Raster.'
+			},
+			{
+				en: 'Fully usable by keyboard; light, dark and system theme; a one-tap lock for a clean read-only view.',
+				de: 'Komplett per Tastatur bedienbar; helles, dunkles und System-Design; eine Sperre mit einem Tipp für eine aufgeräumte Nur-Lese-Ansicht.'
+			},
+			{
+				en: 'German and English, chosen from the browser’s language.',
+				de: 'Deutsch und Englisch, passend zur Sprache des Browsers.'
+			}
+		],
+		engineering: [
+			{
+				en: 'Plain JavaScript modules without dependencies, tested with Node’s built-in test runner; CI fails below 95 % coverage and reports it to Codecov.',
+				de: 'Reine JavaScript-Module ohne Abhängigkeiten, getestet mit dem eingebauten Test-Runner von Node; die CI scheitert unter 95 % Coverage und meldet sie an Codecov.'
+			},
+			{
+				en: 'A small Playwright suite guards the layout, and CI takes the screenshots again on every push.',
+				de: 'Eine kleine Playwright-Suite bewacht das Layout, und die CI nimmt die Screenshots bei jedem Push neu auf.'
+			},
+			{
+				en: 'Requirements, the export format and design decisions written down in the repository.',
+				de: 'Anforderungen, Exportformat und Designentscheidungen sind im Repository festgehalten.'
+			}
+		],
+		stack: ['JavaScript', 'HTML', 'CSS', 'Node.js', 'Playwright'],
+		platforms: ['web'],
+		links: [
+			{ kind: 'live', href: 'https://fionapreroll.github.io/vibe-stundenplan/' },
+			readme('vibe-stundenplan'),
+			doc('vibe-stundenplan', 'REQUIREMENTS.md', 'Requirements', 'Anforderungen'),
+			doc('vibe-stundenplan', 'EXPORT_FORMAT.md', 'Export format', 'Exportformat')
+		],
+		hero: [
+			{
+				file: 'screenshots/app.png',
+				caption: {
+					en: 'A schedule with example entries',
+					de: 'Ein Stundenplan mit Beispieleinträgen'
+				},
+				focus: 'top'
+			}
+		],
+		gallery: [
+			{
+				file: 'screenshots/app-dark-locked.png',
+				caption: {
+					en: 'Dark mode, with editing locked',
+					de: 'Dunkles Design, Bearbeiten gesperrt'
+				}
+			},
+			{
+				file: 'screenshots/entry-modal.png',
+				caption: { en: 'Adding an entry', de: 'Einen Eintrag hinzufügen' }
+			},
+			{
+				file: 'screenshots/time-modal.png',
+				caption: { en: 'Setting the time grid', de: 'Das Zeitraster einstellen' }
+			}
+		]
+	},
+	{
 		slug: 'retroizer',
 		name: 'Retroizer',
 		group: 'everyday',
-		started: '2026-11',
+		started: '2024-08',
 		ci: { workflow: 'ci.yml', coverage: false },
 		tagline: {
 			en: 'Turns any picture into retro pixel art in the browser: a palette of 2 to 256 colors found by k-means, then pixels as big as you like.',
 			de: 'Macht im Browser aus jedem Bild Retro-Pixelart: eine Palette aus 2 bis 256 Farben, per k-Means gefunden, dann Pixel so groß, wie man will.'
 		},
 		motivation: {
-			en: 'Retroizer started as a single JavaScript file of mine, and a full HD picture kept it busy for almost a minute while the page froze. I brought it back as version 2, rewritten in TypeScript: about 150 times faster, with the tests it never had, and an interface like a piece of old hardware.',
-			de: 'Retroizer begann als eine einzige JavaScript-Datei von mir, und ein Full-HD-Bild beschäftigte ihn fast eine Minute lang, während die Seite einfror. Ich habe ihn als Version 2 zurückgeholt, neu geschrieben in TypeScript: rund 150-mal schneller, mit den Tests, die er nie hatte, und einer Oberfläche wie ein Stück alter Hardware.'
+			en: 'Retroizer started in 2024 as a single JavaScript file of mine, and a full HD picture kept it busy for almost a minute while the page froze. I brought it back as version 2, rewritten in TypeScript: about 150 times faster, with the tests it never had, and an interface like a piece of old hardware.',
+			de: 'Retroizer begann 2024 als eine einzige JavaScript-Datei von mir, und ein Full-HD-Bild beschäftigte ihn fast eine Minute lang, während die Seite einfror. Ich habe ihn als Version 2 zurückgeholt, neu geschrieben in TypeScript: rund 150-mal schneller, mit den Tests, die er nie hatte, und einer Oberfläche wie ein Stück alter Hardware.'
 		},
 		summary: {
 			en: 'Drop, load or paste a picture, choose the pixel size and the number of colors, and press Retroize: the picture shrinks to a palette of its own colors, then into blocks. Save it as a PNG or copy it, and take the palette along as hex codes or a GIMP palette; the picture never leaves the device.',
@@ -1629,92 +1715,6 @@ export const projects: Project[] = [
 					en: 'The About dialog: version, build and the parts from elsewhere',
 					de: 'Der Info-Dialog: Version, Build und die fremden Bestandteile'
 				}
-			}
-		]
-	},
-	{
-		slug: 'vibe-stundenplan',
-		name: 'Vibe-Stundenplan',
-		group: 'everyday',
-		started: '2026-09',
-		ci: { workflow: 'ci.yml', coverage: true },
-		tagline: {
-			en: 'A weekly timetable in the browser: no account, no backend, no build step.',
-			de: 'Ein Wochenstundenplan im Browser: kein Konto, kein Backend, kein Build-Schritt.'
-		},
-		motivation: {
-			en: 'A timetable for a university week that simply works: open it, fill it in, done. Everything stays in the browser, and the code stays small enough to read in an afternoon.',
-			de: 'Ein Stundenplan für die Uni-Woche, der einfach funktioniert: öffnen, ausfüllen, fertig. Alles bleibt im Browser, und der Code bleibt klein genug, um ihn an einem Nachmittag zu lesen.'
-		},
-		summary: {
-			en: 'A weekly grid with days to rename, add and remove, time grids from presets such as TU Dresden and RWTH Aachen or fully custom, entries by click or by dragging across slots, and several schedules side by side, exported as readable JSON.',
-			de: 'Ein Wochenraster mit Tagen zum Umbenennen, Hinzufügen und Entfernen, Zeitraster aus Vorlagen wie TU Dresden und RWTH Aachen oder ganz eigene, Einträge per Klick oder Ziehen über mehrere Slots und mehrere Pläne nebeneinander, exportiert als lesbares JSON.'
-		},
-		features: [
-			{
-				en: 'The current time slot and weekday light up as the day goes by.',
-				de: 'Der aktuelle Zeitslot und Wochentag leuchten im Lauf des Tages mit.'
-			},
-			{
-				en: 'Entries with their own start and end times, independent of the grid.',
-				de: 'Einträge mit eigener Start- und Endzeit, unabhängig vom Raster.'
-			},
-			{
-				en: 'Fully usable by keyboard; light, dark and system theme; a one-tap lock for a clean read-only view.',
-				de: 'Komplett per Tastatur bedienbar; helles, dunkles und System-Design; eine Sperre mit einem Tipp für eine aufgeräumte Nur-Lese-Ansicht.'
-			},
-			{
-				en: 'German and English, chosen from the browser’s language.',
-				de: 'Deutsch und Englisch, passend zur Sprache des Browsers.'
-			}
-		],
-		engineering: [
-			{
-				en: 'Plain JavaScript modules without dependencies, tested with Node’s built-in test runner; CI fails below 95 % coverage and reports it to Codecov.',
-				de: 'Reine JavaScript-Module ohne Abhängigkeiten, getestet mit dem eingebauten Test-Runner von Node; die CI scheitert unter 95 % Coverage und meldet sie an Codecov.'
-			},
-			{
-				en: 'A small Playwright suite guards the layout, and CI takes the screenshots again on every push.',
-				de: 'Eine kleine Playwright-Suite bewacht das Layout, und die CI nimmt die Screenshots bei jedem Push neu auf.'
-			},
-			{
-				en: 'Requirements, the export format and design decisions written down in the repository.',
-				de: 'Anforderungen, Exportformat und Designentscheidungen sind im Repository festgehalten.'
-			}
-		],
-		stack: ['JavaScript', 'HTML', 'CSS', 'Node.js', 'Playwright'],
-		platforms: ['web'],
-		links: [
-			{ kind: 'live', href: 'https://fionapreroll.github.io/vibe-stundenplan/' },
-			readme('vibe-stundenplan'),
-			doc('vibe-stundenplan', 'REQUIREMENTS.md', 'Requirements', 'Anforderungen'),
-			doc('vibe-stundenplan', 'EXPORT_FORMAT.md', 'Export format', 'Exportformat')
-		],
-		hero: [
-			{
-				file: 'screenshots/app.png',
-				caption: {
-					en: 'A schedule with example entries',
-					de: 'Ein Stundenplan mit Beispieleinträgen'
-				},
-				focus: 'top'
-			}
-		],
-		gallery: [
-			{
-				file: 'screenshots/app-dark-locked.png',
-				caption: {
-					en: 'Dark mode, with editing locked',
-					de: 'Dunkles Design, Bearbeiten gesperrt'
-				}
-			},
-			{
-				file: 'screenshots/entry-modal.png',
-				caption: { en: 'Adding an entry', de: 'Einen Eintrag hinzufügen' }
-			},
-			{
-				file: 'screenshots/time-modal.png',
-				caption: { en: 'Setting the time grid', de: 'Das Zeitraster einstellen' }
 			}
 		]
 	}

@@ -23,7 +23,7 @@ export const de: Record<MessageKey, string> = {
 	'hero.hello': 'Hallo, ich bin Fiona (sie/ihr).',
 	'hero.title': 'Engineering-Experimente, mit Sorgfalt ausgeliefert.',
 	'hero.intro':
-		'Ich baue Software von Anfang bis Ende: einen selbst gehosteten Feedreader, 3D-Spiele im Browser, Handys, die ohne Server zusammen spielen, Musik- und Videotools, die nie eine Datei hochladen, und Netzwerk-Tools und ein Audio-Plugin in Rust. Jedes Projekt hier hat Tests, CI, Dokumentation und eine Oberfläche auf Deutsch und Englisch.',
+		'Ich baue Software von Anfang bis Ende: einen selbst gehosteten Feedreader, 3D-Spiele im Browser, Handys, die ohne Server zusammen spielen, Musik- und Videotools, die nie eine Datei hochladen, und Netzwerk-Tools und ein Audio-Plugin in Rust. Jedes Projekt hier hat Tests, CI und Dokumentation, fast jedes auch eine Oberfläche auf Deutsch und Englisch.',
 	'hero.open': 'Offen für neue Möglichkeiten',
 	'hero.cta.projects': 'Zu den Projekten',
 	'hero.cta.contact': 'Kontakt aufnehmen',

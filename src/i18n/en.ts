@@ -22,7 +22,7 @@ export const en = {
 	'hero.hello': 'Hi, I’m Fiona (she/her).',
 	'hero.title': 'Engineering experiments, shipped with care.',
 	'hero.intro':
-		'I build software end to end: a self-hosted feed reader, 3D games in the browser, phones that play together without a server, music and video tools that never upload a file, and network tools and an audio plugin in Rust. Every project here comes with tests, CI, documentation and an interface in English and German.',
+		'I build software end to end: a self-hosted feed reader, 3D games in the browser, phones that play together without a server, music and video tools that never upload a file, and network tools and an audio plugin in Rust. Every project here comes with tests, CI and documentation, and nearly every one with an interface in English and German.',
 	'hero.open': 'Open to new opportunities',
 	'hero.cta.projects': 'See the projects',
 	'hero.cta.contact': 'Get in touch',
